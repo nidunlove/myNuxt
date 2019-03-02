@@ -12,6 +12,14 @@ app.set('port', port)
 let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
+//自定义接口
+const api = require('./api/index.js')
+//自定义接口
+app.get("/a",function(req,res){  //自己的路由
+    res.send({a:1});
+});
+app.use('/api',api)
+
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)

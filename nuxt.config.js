@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'http://at.alicdn.com/t/font_474878_w5dm0dn3f1.css' },
     ]
   },
 
@@ -27,6 +28,10 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    './assets/css/variables.less',
+    './assets/css/base.less',
+    './assets/css/common.less',
+    './assets/css/tools.less',
   ],
 
   /*
@@ -47,8 +52,23 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    // proxy: true,
+    // prefix: '/api', // baseURL
+    // credentials: true,
   },
-
+  // proxy: {
+  //   '/api/': {
+  //     target: 'http://127.0.0.1:3000', // 代理地址
+  //     changeOrigin: true,
+  //     pathRewrite: {
+  //       '^/api': ''
+  //     },
+  //   },
+  // },
+  // server: {
+  //   port: 8000, // default: 3000
+  //   host: '127.0.0.1', // default: localhost,
+  // },
   /*
   ** Build configuration
   */

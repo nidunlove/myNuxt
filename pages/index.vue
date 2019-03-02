@@ -1,6 +1,21 @@
 <template>
-  <section class="container">
-    <div>
+  <section class="con-main">
+    <div class="linkTeamShare">
+      <h1>前端团队网址分享</h1>
+      <!-- {{resData}} -->
+      <div class="link-lv-1" v-for="(item,index) in resData" :key="index">
+        <h2>{{item.title}}</h2>
+        <div class="link-lv-2" v-for="(item2,index2) in item.data" :key="index2">
+          <!-- <h4> -->
+            <ul>
+              <li><a :href="item2.url" :title="item2.title" :alt="item2.title" >{{item2.title}}</a></li>
+            </ul>
+            
+          <!-- </h4> -->
+        </div>
+      </div>
+    </div>
+    <!-- <div>
       <logo/>
       <h1 class="title">
         myNuxt
@@ -18,49 +33,116 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
-  }
+  // components: {
+  //   Logo,Header,Footer
+  // },
+  data () {
+    return {
+      title: '倪盾的个人主页',
+      resData:{}
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: '倪盾的个人主页，一枚IT码农/前端开发' }
+      ]
+    }
+  },
+  asyncData (context) {
+    // console.log('%j','asyncData');
+    return context.app.$axios.get('/api/home/list')
+    .then((res) => {
+      // console.info('%j','asyncData axios',res);
+      if(res && res.data){
+        // context.app.data.resData = res.data;
+        return { resData: res.data.data }
+      }
+
+      // return { title: res.data.title }
+    })
+  },
+  fetch () {
+    // console.log('%j','fetch');
+    // The fetch method is used to fill the store before rendering the page
+  },
+  
+  // and more functionality to discover
+  //创建时
+  created() {
+    // console.log('created');
+  },
+  //编译挂载前
+  mounted() {
+    console.log('mounted');
+    // this.getData('/');
+    // this.getData('/api/home');
+    // this.getData('/api/home/list');
+    // this.getData('/api');
+    // this.getData('/a');
+  },
+  methods: {
+    getData(url){
+      this.$axios.get(url)
+        .then(({ data }) => {
+          console.log("数据请求成功");
+          console.log(data);
+          // try{
+          //   console.log(JSON.parse(data));
+          // }catch(e){
+          //   console.log(e);
+          // }
+        })
+        .catch((error) => {
+          console.log(error);
+          console.log("请求失败");
+        });
+    }
+   }
 }
 </script>
 
-<style>
+<style scoped lang="less">
+  .linkTeamShare {
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+    h1 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color:#666;
+    }
+    .link-lv-1 {
+      margin: 10px;
+      h2 {
+        font-size: 18px;
+        color:#333;
+      }
+      .link-lv-2 {
+        ul {
+          padding: 5px;
+          margin-left: 5px;
+          li {
+            display: inline-block;
+            margin: 0 10px;
+            a {
+              color:#4169E1;
+              text-decoration: underline;
+              &:hover {
+                color:#1E90FF;
+              }
+            }
+          }
+        }
+      } 
+    }
+  }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

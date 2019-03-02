@@ -1,11 +1,24 @@
 <template>
   <div>
+    <my-header />
     <nuxt/>
+    <my-footer />
   </div>
 </template>
+<script>
+import Logo from '~/components/Logo.vue'
+import myHeader from '~/components/Header.vue'
+import myFooter from '~/components/Footer.vue'
 
+export default {
+  components: {
+    Logo
+    ,myHeader,myFooter
+  },
+}
+</script>
 <style>
-html {
+/*html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
@@ -51,5 +64,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+}*/
 </style>
