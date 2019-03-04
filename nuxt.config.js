@@ -15,7 +15,7 @@ module.exports = {
     ],
     script: [
      {src: 'https://hm.baidu.com/hm.js?33ab7e26d50aacf7b2ea61652e7d0e2b'},/*引入百度统计的js*/
-    ]
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css', href: 'http://at.alicdn.com/t/font_474878_w5dm0dn3f1.css' },
