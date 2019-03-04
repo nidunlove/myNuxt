@@ -1,39 +1,25 @@
 <template>
   <section class="con-main">
     <div class="linkTeamShare">
-      <h1>前端团队网址分享</h1>
+      <h1>前端相关团队网址分享</h1>
       <!-- {{resData}} -->
       <div class="link-lv-1" v-for="(item,index) in resData" :key="index">
         <h2>{{item.title}}</h2>
-        <div class="link-lv-2" v-for="(item2,index2) in item.data" :key="index2">
+        <div class="link-lv-2">
           <!-- <h4> -->
             <ul>
-              <li><a :href="item2.url" :title="item2.title" :alt="item2.title" >{{item2.title}}</a></li>
+              <li v-for="(item2,index2) in item.data" :key="index2"><a :href="item2.url" :title="item2.title" :alt="item2.title" >{{item2.title}}</a></li>
             </ul>
             
           <!-- </h4> -->
         </div>
       </div>
     </div>
-    <!-- <div>
-      <logo/>
-      <h1 class="title">
-        myNuxt
-      </h1>
-      <h2 class="subtitle">
-        My primo Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div> -->
+    <h1>其他相关分享(持续更新)</h1>
+    <ul>
+      <li><a href="https://github.com/niezhiyang/open_source_team#1%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4">GitHub国内顶尖团队的开源地址</a></li>
+      <li><a href="https://github.com/webproblem/learning-article">GitHub前端资源整合</a></li>
+    </ul>
   </section>
 </template>
 
@@ -54,7 +40,9 @@ export default {
     return {
       title: this.title,
       meta: [
+        { hid: 'keywords', name: 'keywords', content: '倪盾,个人主页,前端,前端开发,web前端,it,码农,前端网址' },
         { hid: 'description', name: 'description', content: '倪盾的个人主页，一枚IT码农/前端开发' }
+        
       ]
     }
   },

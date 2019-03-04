@@ -70,10 +70,23 @@
     }
     .git-logo {
       a {
+        display: inline-block;
         text-decoration: none;
+        .icon-csdn {
+          font-size: 32px;
+          color:#666;
+        }
         .icon-github {
           font-size: 32px;
-          color:#000;
+          color:#666;
+        }
+        &:hover {
+          .icon-csdn {
+            color:#CE000D;
+          }
+          .icon-github {
+            color:#000;
+          }
         }
       }
     }

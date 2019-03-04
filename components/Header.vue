@@ -38,7 +38,11 @@
         </ul>
       </nav>
       <nav class="git-logo">
-        <a href="https://github.com/nidunlove/myNuxt" target="_blank">
+        
+        <a href="https://blog.csdn.net/nidunlove" title="csdn" alt="csdn" target="_blank">
+          <i class="iconfont icon-csdn"></i>
+        </a>
+        <a href="https://github.com/nidunlove/myNuxt" title="github" alt="github" target="_blank">
           <i class="iconfont icon-github"></i>
           <!-- <i class="iconfont">&#xf1b4;</i> -->
           <!-- <span>github</span> -->

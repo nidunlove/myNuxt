@@ -3,6 +3,7 @@
     <div class="footer-con">
       <div>Copyright<span style="margin:0 3px">&copy;</span>2019<a href="http://www.668ni.com/" target="_blank">&nbsp;倪盾的个人空间</a>. All Rights Reserved.</div>
       <div><a href="http://www.miitbeian.gov.cn/" target="_blank">苏ICP备19008760号-1</a></div>
+      <div>Powered by <a href="https://zh.nuxtjs.org/" target="_blank">Nuxt.Js</a></div>
     </div>
   </footer>
 </template>
