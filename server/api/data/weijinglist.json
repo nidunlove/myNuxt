@@ -1,0 +1,14 @@
+{
+	"code": 200,
+	"data": [{
+			"title": "魏静的作品展示",
+			"contentList":["2019-2013XXXX公司1","2019-2013XXXX公司2","2019-2013XXXX公司3","2019-2013XXXX公司4"],
+			"imglist":[]
+		},
+		{
+			"title": "作品1",
+			"contentList":["2019-2013XXXX公司1","2019-2013XXXX公司2","2019-2013XXXX公司3","2019-2013XXXX公司4"],
+			"imglist":["http://www.baidu.com"]
+		}
+	]
+}

@@ -8,7 +8,7 @@
         <div class="link-lv-2">
           <!-- <h4> -->
             <ul>
-              <li v-for="(item2,index2) in item.data" :key="index2"><a :href="item2.url" :title="item2.title" :alt="item2.title" >{{item2.title}}</a></li>
+              <li v-for="(item2,index2) in item.data" :key="index2"><a :href="item2.url" :title="item2.title" :alt="item2.title" target="_blank">{{item2.title}}</a></li>
             </ul>
             
           <!-- </h4> -->
@@ -17,8 +17,8 @@
     </div>
     <h1>其他相关分享(持续更新)</h1>
     <ul>
-      <li><a href="https://github.com/niezhiyang/open_source_team#1%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4">GitHub国内顶尖团队的开源地址</a></li>
-      <li><a href="https://github.com/webproblem/learning-article">GitHub前端资源整合</a></li>
+      <li><a href="https://github.com/niezhiyang/open_source_team#1%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4" target="_blank">GitHub国内顶尖团队的开源地址</a></li>
+      <li><a href="https://github.com/webproblem/learning-article" target="_blank">GitHub前端资源整合</a></li>
     </ul>
   </section>
 </template>
@@ -48,7 +48,7 @@ export default {
   },
   asyncData (context) {
     // console.log('%j','asyncData');
-    return context.app.$axios.get('/api/home/list')
+    return context.app.$axios.get('/api/home/teamlistshare')
     .then((res) => {
       // console.info('%j','asyncData axios',res);
       if(res && res.data){
