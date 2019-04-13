@@ -56,13 +56,13 @@ module.exports = {
   /*
   ** Axios module configuration
   */
-  // axios: {
-  //   baseURL: process.env.baseUrl
-  //   // See https://github.com/nuxt-community/axios-module#options
-  //   // proxy: true,
-  //   // prefix: '/api', // baseURL
-  //   // credentials: true,
-  // },
+  axios: {
+    baseURL: 'http://www.668ni.com'
+    // See https://github.com/nuxt-community/axios-module#options
+    // proxy: true,
+    // prefix: '/api', // baseURL
+    // credentials: true,
+  },
   // proxy: {
   //   '/api/': {
   //     target: 'http://127.0.0.1:3000', // 代理地址
@@ -72,10 +72,10 @@ module.exports = {
   //     },
   //   },
   // },
-  server: {
-    port: 80, // default: 3000
-    host: '0.0.0.0', // default: localhost,
-  },
+  // server: {
+  //   port: 3000, // default: 3000
+  //   host: '0.0.0.0', // default: localhost,
+  // },
   // env: {
   //   baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   // },
