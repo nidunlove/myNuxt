@@ -57,7 +57,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: ''
+    // baseURL: ''
     // See https://github.com/nuxt-community/axios-module#options
     // proxy: true,
     // prefix: '/api', // baseURL
