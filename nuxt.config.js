@@ -72,10 +72,10 @@ module.exports = {
   //     },
   //   },
   // },
-  // server: {
-  //   port: 8000, // default: 3000
-  //   host: '127.0.0.1', // default: localhost,
-  // },
+  server: {
+    port: 80, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+  },
   // env: {
   //   baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   // },
