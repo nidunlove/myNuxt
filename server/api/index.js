@@ -13,6 +13,8 @@ var router = express.Router()
 
 router.use('/home',require('./home'))
 
+router.use('/color',require('./color'))
+
 router.use('/wj',require('./weijing'))
 
 router.get('/', function(req, res, next){//首页路由

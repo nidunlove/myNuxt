@@ -11,13 +11,16 @@
       <!--  -->
       <nav class="nav-main">
         <ul class="clearfix">
+          <li class="fl">
+            <nuxt-link to="/">公司/团队网址</nuxt-link>
+          </li>
+          <li class="fl">
+            <nuxt-link to="/orgShare">组织/学习网址</nuxt-link>
+          </li>
+          <li class="fl">
+            <nuxt-link to="/color">色彩</nuxt-link>
+          </li>
           <!-- <li class="fl">
-            <nuxt-link to="/">主页</nuxt-link>
-          </li>
-          <li class="fl">
-            <nuxt-link to="/">色彩</nuxt-link>
-          </li>
-          <li class="fl">
             <nuxt-link to="/">字典</nuxt-link>
           </li>
           <li class="fl">

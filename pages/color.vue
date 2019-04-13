@@ -1,25 +1,27 @@
 <template>
   <section class="con-main">
     <div class="linkTeamShare">
-      <h1>前端-团队网址</h1>
+      <h1>web色彩</h1>
       <!-- {{resData}} -->
       <div class="link-lv-1" v-for="(item,index) in resData" :key="index">
         <h2>{{item.title}}</h2>
-        <div class="link-lv-2">
+        <div class="colorList">
           <!-- <h4> -->
+            
             <ul>
-              <li v-for="(item2,index2) in item.data" :key="index2"><a :href="item2.url" :title="item2.title" :alt="item2.title" target="_blank">{{item2.title}}</a></li>
+              <li v-for="(item2,index2) in item.data" :key="index2" @click="copyToClipBoard($event,item2)">
+                <div class="colorBlock" :style="{backgroundColor:'#'+item2 }"></div>
+                <h3>#{{item2}}</h3>
+                <h3>rgb:({{colorHexToRgb(item2)}})</h3>
+              </li>
+                
             </ul>
             
           <!-- </h4> -->
         </div>
       </div>
     </div>
-    <h1>其他相关分享(持续更新)</h1>
-    <ul>
-      <li><a href="https://github.com/niezhiyang/open_source_team#1%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4" target="_blank">GitHub国内顶尖团队的开源地址</a></li>
-      <li><a href="https://github.com/webproblem/learning-article" target="_blank">GitHub前端资源整合</a></li>
-    </ul>
+    
   </section>
 </template>
 
@@ -48,7 +50,7 @@ export default {
   },
   asyncData (context) {
     // console.log('%j','asyncData');
-    return context.app.$axios.get('/api/home/teamlistshare')
+    return context.app.$axios.get('/api/color/color')
     .then((res) => {
       // console.info('%j','asyncData axios',res);
       if(res && res.data){
@@ -79,22 +81,35 @@ export default {
     // this.getData('/a');
   },
   methods: {
-    getData(url){
-      this.$axios.get(url)
-        .then(({ data }) => {
-          console.log("数据请求成功");
-          console.log(data);
-          // try{
-          //   console.log(JSON.parse(data));
-          // }catch(e){
-          //   console.log(e);
-          // }
-        })
-        .catch((error) => {
-          console.log(error);
-          console.log("请求失败");
-        });
+    colorHexToRgb(colorHex){
+      let sColor = colorHex;
+          var sColorChange = [];
+          for(var i=1; i<7; i+=2){
+              sColorChange.push(parseInt("0x"+sColor.slice(i,i+2)));    
+          }
+          return sColorChange.join(",");
+    },
+    copyToClipBoard($event,text){
+      // var clipBoardContent="";
+      // clipBoardContent+=document.title;
+      // clipBoardContent+="";
+      // clipBoardContent+=this.location.href;
+      console.log($event);
+      // try {
+      //   window.clipboardData.setData("Text",'#'+text);
+      //   alert("复制成功");
+      // } catch(e){
+      //   console.log(e);
+      // }
+      // var text = document.getElementById("text").innerText;
+      //  var input = document.getElementById("input");
+      //  input.value = text; // 修改文本框的内容
+      //  input.select(); // 选中文本
+      //  document.execCommand("copy"); // 执行浏览器复制命令
+      //  alert("复制成功");
+
     }
+
    }
 }
 </script>

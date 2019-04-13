@@ -1,7 +1,7 @@
 <template>
   <section class="con-main">
     <div class="linkTeamShare">
-      <h1>前端-团队网址</h1>
+      <h1>前端-学习/组织网址</h1>
       <!-- {{resData}} -->
       <div class="link-lv-1" v-for="(item,index) in resData" :key="index">
         <h2>{{item.title}}</h2>
@@ -15,11 +15,7 @@
         </div>
       </div>
     </div>
-    <h1>其他相关分享(持续更新)</h1>
-    <ul>
-      <li><a href="https://github.com/niezhiyang/open_source_team#1%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4" target="_blank">GitHub国内顶尖团队的开源地址</a></li>
-      <li><a href="https://github.com/webproblem/learning-article" target="_blank">GitHub前端资源整合</a></li>
-    </ul>
+    
   </section>
 </template>
 
@@ -48,7 +44,7 @@ export default {
   },
   asyncData (context) {
     // console.log('%j','asyncData');
-    return context.app.$axios.get('/api/home/teamlistshare')
+    return context.app.$axios.get('/api/home/orglistshare')
     .then((res) => {
       // console.info('%j','asyncData axios',res);
       if(res && res.data){
@@ -79,22 +75,22 @@ export default {
     // this.getData('/a');
   },
   methods: {
-    getData(url){
-      this.$axios.get(url)
-        .then(({ data }) => {
-          console.log("数据请求成功");
-          console.log(data);
-          // try{
-          //   console.log(JSON.parse(data));
-          // }catch(e){
-          //   console.log(e);
-          // }
-        })
-        .catch((error) => {
-          console.log(error);
-          console.log("请求失败");
-        });
-    }
+    // getData(url){
+    //   this.$axios.get(url)
+    //     .then(({ data }) => {
+    //       console.log("数据请求成功");
+    //       console.log(data);
+    //       // try{
+    //       //   console.log(JSON.parse(data));
+    //       // }catch(e){
+    //       //   console.log(e);
+    //       // }
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //       console.log("请求失败");
+    //     });
+    // }
    }
 }
 </script>
