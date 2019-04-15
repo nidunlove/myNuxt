@@ -5,7 +5,7 @@ import Vue from 'vue'
 let HY_BASEURL = "";
 if (process.env.NODE_ENV === 'development') {
     // dev 开发 run dev
-    HY_BASEURL = "/baseUrl";
+    // HY_BASEURL = "/baseUrl";
 } else {
     // build 线上和测试 run build
     HY_BASEURL = "";
