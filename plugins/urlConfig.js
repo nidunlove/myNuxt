@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'development') {
     MY_BASEURL = "/baseUrl";
 } else {
     // build 线上和测试 run build
-    MY_BASEURL = window.location.href;
+    MY_BASEURL = "";
 }
 
 
