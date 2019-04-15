@@ -27,7 +27,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#999' },
 
   /*
   ** Global CSS
@@ -65,15 +65,15 @@ module.exports = {
     // prefix: '/api', // baseURL
     // credentials: true,
   },
-  // proxy: {
-  //   '/baseUrl/': {
-  //     target: 'http://127.0.0.1:3000', // 代理地址
-  //     changeOrigin: true,
-  //     pathRewrite: {
-  //       '^/baseUrl': ''
-  //     },
-  //   },
-  // },
+  proxy: {
+    '/baseUrl/': {
+      target: 'http://127.0.0.1:3000', // 代理地址
+      changeOrigin: true,
+      pathRewrite: {
+        '^/baseUrl': ''
+      },
+    },
+  },
   // server: {
   //   port: 3000, // default: 3000
   //   host: '0.0.0.0', // default: localhost,

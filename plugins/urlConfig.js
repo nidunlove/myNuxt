@@ -2,23 +2,23 @@
 import Vue from 'vue'
 
 /*请求地址配置*/
-let HY_BASEURL = "";
+let MY_BASEURL = "";
 if (process.env.NODE_ENV === 'development') {
     // dev 开发 run dev
-    // HY_BASEURL = "/baseUrl";
+    MY_BASEURL = "/baseUrl";
 } else {
     // build 线上和测试 run build
-    HY_BASEURL = "";
+    MY_BASEURL = "http://www.668ni.com";
 }
 
 
 const urlConfig = {
 	//公司团队网址分享
-	teamlistshare: HY_BASEURL+'/api/home/teamlistshare',
+	teamlistshare: MY_BASEURL+'/api/home/teamlistshare',
 	//组织分享
-	orglistshare: HY_BASEURL+'/api/home/orglistshare',
+	orglistshare: MY_BASEURL+'/api/home/orglistshare',
 	//色彩
-	color: HY_BASEURL+'/api/color/color',
+	color: MY_BASEURL+'/api/color/color',
 }
 
 // const Vue =  {
