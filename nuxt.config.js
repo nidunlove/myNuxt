@@ -43,7 +43,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-  '@/plugins/baiduGa.js', /*百度统计*/
+    '@/plugins/baiduGa.js', /*百度统计*/
+    '@/plugins/urlConfig.js', /*百度统计*/
   ],
 
   /*
@@ -51,27 +52,28 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
   ** Axios module configuration
   */
   axios: {
-    // baseURL: ''
+    baseURL: process.env.BASE_URL || 'http://127.0.0.1:3000'
     // See https://github.com/nuxt-community/axios-module#options
     // proxy: true,
     // prefix: '/api', // baseURL
     // credentials: true,
   },
-  // proxy: {
-  //   '/api/': {
-  //     target: 'http://127.0.0.1:3000', // 代理地址
-  //     changeOrigin: true,
-  //     pathRewrite: {
-  //       '^/api': ''
-  //     },
-  //   },
-  // },
+  proxy: {
+    '/baseUrl/': {
+      target: 'http://127.0.0.1:3000', // 代理地址
+      changeOrigin: true,
+      pathRewrite: {
+        '^/baseUrl': ''
+      },
+    },
+  },
   // server: {
   //   port: 3000, // default: 3000
   //   host: '0.0.0.0', // default: localhost,

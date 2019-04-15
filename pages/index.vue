@@ -48,7 +48,7 @@ export default {
   },
   asyncData (context) {
     // console.log('%j','asyncData');
-    return context.app.$axios.get('/api/home/teamlistshare')
+    return context.app.$axios.get(context.app.$urlConfig.teamlistshare)
     .then((res) => {
       // console.info('%j','asyncData axios',res);
       if(res && res.data){

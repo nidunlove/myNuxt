@@ -44,7 +44,7 @@ export default {
   },
   asyncData (context) {
     // console.log('%j','asyncData');
-    return context.app.$axios.get('/api/home/orglistshare')
+    return context.app.$axios.get(context.app.$urlConfig.orglistshare)
     .then((res) => {
       // console.info('%j','asyncData axios',res);
       if(res && res.data){
