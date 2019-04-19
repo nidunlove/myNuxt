@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'development') {
     // MY_BASEURL = "/baseUrl";
 } else {
     // build 线上和测试 run build
-    MY_BASEURL = "http://127.0.0.1:3000";
+    MY_BASEURL = "http://127.0.0.1";
 }
 
 
