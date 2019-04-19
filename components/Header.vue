@@ -12,13 +12,13 @@
       <nav class="nav-main">
         <ul class="clearfix">
           <li class="fl">
-            <nuxt-link to="/" target="">公司/团队网址</nuxt-link>
+            <nuxt-link to="/" target="_blank">公司/团队网址</nuxt-link>
           </li>
           <li class="fl">
-            <nuxt-link to="/orgShare" target="">组织/学习网址</nuxt-link>
+            <nuxt-link to="/orgShare" target="_blank">组织/学习网址</nuxt-link>
           </li>
           <li class="fl">
-            <nuxt-link to="/color" target="">色彩</nuxt-link>
+            <nuxt-link to="/color" target="_blank">色彩</nuxt-link>
           </li>
           <!-- <li class="fl">
             <nuxt-link to="/">字典</nuxt-link>
