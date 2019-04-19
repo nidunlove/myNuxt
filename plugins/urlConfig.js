@@ -5,10 +5,10 @@ import Vue from 'vue'
 let MY_BASEURL = "";
 if (process.env.NODE_ENV === 'development') {
     // dev 开发 run dev
-    MY_BASEURL = "/baseUrl";
+    // MY_BASEURL = "/baseUrl";
 } else {
     // build 线上和测试 run build
-    MY_BASEURL = "";
+    MY_BASEURL = "http://47.101.189.40";
 }
 
 

@@ -40,9 +40,8 @@ export default {
     return {
       title: this.title,
       meta: [
-        { hid: 'keywords', name: 'keywords', content: '倪盾,个人主页,前端,前端开发,web前端,it,码农,前端网址' },
-        { hid: 'description', name: 'description', content: '倪盾的个人主页，一枚IT码农/前端开发' }
-        
+        { hid: 'keywords', name: 'keywords', content: this.$store.state.keywords },
+        { hid: 'description', name: 'description', content: this.$store.state.description }
       ]
     }
   },
