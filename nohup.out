@@ -1,0 +1,24 @@
+yarn run v1.12.3
+$ cross-env NODE_ENV=production node server/index.js --exec babel-node
+
+ READY  Server listening on http://127.0.0.1:3000                     15:07:54
+
+events.js:167
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (net.js:1290:14)
+    at listenInCluster (net.js:1338:12)
+    at doListen (net.js:1471:7)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:745:11)
+    at startup (internal/bootstrap/node.js:282:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+Emitted 'error' event at:
+    at emitErrorNT (net.js:1317:8)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    [... lines matching original stack trace ...]
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
