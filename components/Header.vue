@@ -4,8 +4,8 @@
       <nav class="logo">
         <nuxt-link to="/" target="_blank">
           <i class="iconfont icon-gerenkongjian"></i>
-          <span>倪盾的个人主页</span>
-          <span style="font-size: 12px;color:#999;">一枚前端开发</span>
+          <h1>一枚前端开发</h1>
+          <h2 style="font-size: 12px;color:#999;">倪盾的个人主页</h2>
         </nuxt-link>
       </nav>
       <!--  -->
@@ -19,6 +19,9 @@
           </li>
           <li class="fl">
             <nuxt-link to="/color" target="">色彩</nuxt-link>
+          </li>
+          <li class="fl">
+            <nuxt-link to="/openApi" target="">开放接口</nuxt-link>
           </li>
           <!-- <li class="fl">
             <nuxt-link to="/">字典</nuxt-link>

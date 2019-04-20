@@ -1,0 +1,625 @@
+{
+  "code": 200,
+  "data": [
+  {
+    "title": "聚合数据www.juhe.com",
+    "data": [
+    {
+      "title": "手机号码归属地API",
+      "url": "https://www.juhe.cn/docs/api/id/11"
+    },
+    {
+      "title": "历史上的今天",
+      "url": "https://www.juhe.cn/docs/api/id/63 "
+    },
+    {
+      "title": "股票数据",
+      "url": "https://www.juhe.cn/docs/api/id/21"
+    },
+    {
+      "title": "全国WIFI接口",
+      "url": "https://www.juhe.cn/docs/api/id/18"
+    },
+    {
+      "title": "星座运势",
+      "url": "https://www.juhe.cn/docs/api/id/58"
+    },
+    {
+      "title": "黄金数据",
+      "url": "https://www.juhe.cn/docs/api/id/29"
+    },
+    {
+      "title": "语音识别",
+      "url": "https://www.juhe.cn/docs/api/id/134"
+    },
+    {
+      "title": "周公解梦",
+      "url": "https://www.juhe.cn/docs/api/id/64"
+    },
+    {
+      "title": "天气预报",
+      "url": "https://www.juhe.cn/docs/api/id/73"
+    },
+    {
+      "title": "身份证查询",
+      "url": "https://www.juhe.cn/docs/api/id/38"
+    },
+    {
+      "title": "笑话大全",
+      "url": "https://www.juhe.cn/docs/api/id/65"
+    },
+    {
+      "title": "老黄历",
+      "url": "https://www.juhe.cn/docs/api/id/29"
+    },
+    {
+      "title": "网站安全检测",
+      "url": "https://www.juhe.cn/docs/api/id/19"
+    },
+    {
+      "title": "手机固话来电显示",
+      "url": "https://www.juhe.cn/docs/api/id/72"
+    },
+    {
+      "title": "基金财务数据",
+      "url": "https://www.juhe.cn/docs/api/id/28"
+    },
+    {
+      "title": "成语词典",
+      "url": "https://www.juhe.cn/docs/api/id/157"
+    },
+    {
+      "title": "新闻头条",
+      "url": "https://www.juhe.cn/docs/api/id/235"
+    },
+    {
+      "title": "IP地址",
+      "url": "https://www.juhe.cn/docs/api/id/1"
+    },
+    {
+      "title": "问答机器人",
+      "url": "https://www.juhe.cn/docs/api/id/112"
+    },
+    {
+      "title": "汇率API",
+      "url": "https://www.juhe.cn/docs/api/id/19"
+    },
+    {
+      "title": " 汇率API",
+      "url": "https://www.juhe.cn/docs/api/id/80"
+    },
+    {
+      "title": "电影票房",
+      "url": "https://www.juhe.cn/docs/api/id/44"
+    },
+    {
+      "title": "万年历",
+      "url": "https://www.juhe.cn/docs/api/id/177"
+    },
+    {
+      "title": "NBA赛事",
+      "url": "https://www.juhe.cn/docs/api/id/92"
+    }]
+  },
+  {
+    "title": "开放api https://www.apiopen.top",
+    "data": [
+    {
+      "title": "新实时段子 ",
+      "url ": "https://api.apiopen.top/getJoke?page=1&count=2&type=video"
+    },
+    {
+      "title": "通过Id查段子",
+      "url": "https://api.apiopen.top/getSingleJoke?sid=28654780"
+    },
+    {
+      "title": "快递查询：",
+      "url": "https://api.apiopen.top/EmailSearch?number=1012002"
+    },
+    {
+      "title": "新实时段子 ",
+      "url ": "https: //api.apiopen.top/getJoke?page=1&count=2&type=video"
+    },
+    {
+      "title": "通过Id查段子",
+      "url": "https://api.apiopen.top/getSingleJoke?sid=28654780"
+    },
+    {
+      "title": "快递查询：",
+      "url": "https://api.apiopen.top/EmailSearch?number=1012002"
+    },
+    {
+      "title": "随机单句诗词推荐：",
+      "url": "https://api.apiopen.top/singlePoetry"
+    },
+    {
+      "title": "随机一首诗词推荐：",
+      "url": "https://api.apiopen.topecommendPoetry"
+    },
+    {
+      "title": "搜索古诗词：",
+      "url": "https://api.apiopen.top/searchPoetry?name=古风二首%20二"
+    },
+    {
+      "title": "搜索古诗词作者：",
+      "url": "https://api.apiopen.top/searchAuthors?name=李白"
+    },
+    {
+      "title": "模糊搜索古诗词（可搜索诗词名、诗词内容、诗词作者）：",
+      "url": "https://api.apiopen.top/likePoetry?name=李白"
+    },
+    {
+      "title": "获取宋朝古诗词：",
+      "url": "https://api.apiopen.top/getSongPoetry?page=1&count=20"
+    },
+    {
+      "title": "获取唐朝古诗词：",
+      "url": "https://api.apiopen.top/getTangPoetry?page=1&count=20"
+    },
+    {
+      "title": "音乐搜索接口：",
+      "url": "https://api.apiopen.top/searchMusic?name=不要说话"
+    },
+    {
+      "title": "音乐电台接口：",
+      "url": "https://api.apiopen.top/musicBroadcasting"
+    },
+    {
+      "title": "音乐电台详情接口：",
+      "url": "https://api.apiopen.top/musicBroadcastingDetails?channelname=public_tuijian_spring"
+    },
+    {
+      "title": "音乐详情接口：",
+      "url": "https://api.apiopen.top/musicDetails?id=604392760"
+    },
+    {
+      "title": "音乐排行榜接口：",
+      "url": "https://api.apiopen.top/musicRankings"
+    },
+    {
+      "title": "音乐排行榜详情接口：",
+      "url": "https://api.apiopen.top/musicRankingsDetails?type=1"
+    },
+    {
+      "title": "每日视频推荐接口：",
+      "url": "https://api.apiopen.top/todayVideo"
+    },
+    {
+      "title": "视频大纲获取接口：",
+      "url": "https://api.apiopen.top/videoHomeTab"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategory"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategoryDetails?id=14"
+    },
+    {
+      "title": "根据ID推荐接口：",
+      "url": "https://api.apiopen.top/videoRecommend?id=127398"
+    },
+    {
+      "title": "新闻接口：",
+      "url": "https://www.apiopen.top/journalismApi"
+    },
+    {
+      "title": "随机推荐热门段子（包含文字、图片、GIF、视频）：",
+      "url": "https://www.apiopen.top/satinApi?type=1&page=1"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】（包含文字、图片、GIF、视频）：",
+      "url": "https://www.apiopen.top/satinGodApi?type=1&page=1"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】评论列表：",
+      "url": "https://www.apiopen.top/satinCommentApi?id=27610708&page=1"
+    },
+    {
+      "title": "热门小说推荐列表",
+      "url": "https://www.apiopen.topovelApi"
+    },
+    {
+      "title": "小说搜索接口",
+      "url": "https://www.apiopen.topovelSearchApi?name=盗墓笔记"
+    },
+    {
+      "title": "小说详情接口",
+      "url": "https://www.apiopen.topovelInfoApi?name=盗墓笔记"
+    },
+    {
+      "title": "天气获取接口",
+      "url": "https://www.apiopen.top/weatherApi?city=成都"
+    },
+    {
+      "title": "美图获取接口",
+      "url": "https://www.apiopen.top/meituApi?page=1"
+    },
+    {
+      "title": "个性网名获取接口",
+      "url": "https://www.apiopen.top/femaleNameApi?page=1"
+    },
+    {
+      "title": "创建应用接口",
+      "url": "https://www.apiopen.top/createUserKey?appId=com.chat.peakchao&passwd=123456"
+    },
+    {
+      "title": "增加统计信息接口",
+      "url": "https://www.apiopen.top/addStatistics?appKey=00d91e8e0cca2b76f515926a36db68f5&type=点击统计&typeId=1&count=2"
+    },
+    {
+      "title": "查询统计信息接口",
+      "url": "https://www.apiopen.top/findStatistics?appKey=00d91e8e0cca2b76f515926a36db68f5"
+    },
+    {
+      "title": "用户注册接口",
+      "url": "https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone=13594347817&passwd=123654"
+    },
+    {
+      "title": "用户登陆接口",
+      "url": "https://www.apiopen.top/login?key=00d91e8e0cca2b76f515926a36db68f5&phone=13594347817&passwd=123456"
+    },
+    {
+      "title": "快递查询：",
+      "url": "https://api.apiopen.top/EmailSearch?number=1012002"
+    },
+    {
+      "title": "随机单句诗词推荐：",
+      "url": "https://api.apiopen.top/singlePoetry"
+    },
+    {
+      "title": "随机一首诗词推荐：",
+      "url": "https://api.apiopen.topecommendPoetry"
+    },
+    {
+      "title": "搜索古诗词：",
+      "url": "https://api.apiopen.top/searchPoetry?name=古风二首%20二"
+    },
+    {
+      "title": "搜索古诗词作者：",
+      "url": "https://api.apiopen.top/searchAuthors?name=李白"
+    },
+    {
+      "title": "模糊搜索古诗词（可搜索诗词名、诗词内容、诗词作者）：",
+      "url": "https://api.apiopen.top/likePoetry?name=李白"
+    },
+    {
+      "title": "获取宋朝古诗词：",
+      "url": "https://api.apiopen.top/getSongPoetry?page=1&count=20"
+    },
+    {
+      "title": "获取唐朝古诗词：",
+      "url": "https://api.apiopen.top/getTangPoetry?page=1&count=20"
+    },
+    {
+      "title": "新实时段子",
+      "url": "https://api.apiopen.top/getJoke?page=1&count=2&type=video"
+    },
+    {
+      "title": "通过Id查段子",
+      "url": "https://api.apiopen.top/getSingleJoke?sid=28654780"
+    },
+    {
+      "title": "音乐搜索接口：",
+      "url": "https://api.apiopen.top/searchMusic?name=不要说话"
+    },
+    {
+      "title": "音乐电台接口：",
+      "url": "https://api.apiopen.top/musicBroadcasting"
+    },
+    {
+      "title": "音乐电台详情接口：",
+      "url": "https://api.apiopen.top/musicBroadcastingDetails?channelname=public_tuijian_spring"
+    },
+    {
+      "title": "音乐详情接口：",
+      "url": "https://api.apiopen.top/musicDetails?id=604392760"
+    },
+    {
+      "title": "音乐排行榜接口：",
+      "url": "https://api.apiopen.top/musicRankings"
+    },
+    {
+      "title": "音乐排行榜详情接口：",
+      "url": "https://api.apiopen.top/musicRankingsDetails?type=1"
+    },
+    {
+      "title": "每日视频推荐接口：",
+      "url": "https://api.apiopen.top/todayVideo"
+    },
+    {
+      "title": "视频大纲获取接口：",
+      "url": "https://api.apiopen.top/videoHomeTab"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategory"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategoryDetails?id=14"
+    },
+    {
+      "title": "根据ID推荐接口：",
+      "url": "https://api.apiopen.top/videoRecommend?id=127398"
+    },
+    {
+      "title": "新闻接口",
+      "url": "https://www.apiopen.top/journalismApi"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】评论列表",
+      "url": "https://www.apiopen.top/satinCommentApi?id=27610708&page=1"
+    },
+    {
+      "title": "热门小说推荐列表",
+      "url": "https://www.apiopen.topovelApi"
+    },
+    {
+      "title": "小说搜索接口",
+      "url": "https: //www.apiopen.topovelSearchApi?name=盗墓笔记 "
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】",
+      "url": "https://www.apiopen.top/satinGodApi?type=1&page=1"
+    },
+    {
+      "title": "美图获取接口",
+      "url": "https://www.apiopen.top/meituApi?page=1"
+    },
+    {
+      "title": "女性个性网名获取接口",
+      "url": "https://www.apiopen.top/femaleNameApi?page=1"
+    },
+    {
+      "title": "天气获取接口",
+      "url": "https://www.apiopen.top/weatherApi?city=成都"
+    },
+    {
+      "title": "随机一首诗词推荐：",
+      "url": "https://api.apiopen.topecommendPoetry"
+    },
+    {
+      "title": "搜索古诗词：",
+      "url": "https://api.apiopen.top/searchPoetry?name=古风二首%20二"
+    },
+    {
+      "title": "搜索古诗词作者：",
+      "url": "https://api.apiopen.top/searchAuthors?name=李白"
+    },
+    {
+      "title": "模糊搜索古诗词（可搜索诗词名、诗词内容、诗词作者）：",
+      "url": "https://api.apiopen.top/likePoetry?name=李白"
+    },
+    {
+      "title": "获取宋朝古诗词：",
+      "url": "https://api.apiopen.top/getSongPoetry?page=1&count=20"
+    },
+    {
+      "title": "获取唐朝古诗词：",
+      "url": "https://api.apiopen.top/getTangPoetry?page=1&count=20"
+    },
+    {
+      "title": "音乐搜索接口：",
+      "url": "https://api.apiopen.top/searchMusic?name=不要说话"
+    },
+    {
+      "title": "音乐电台接口：",
+      "url": "https://api.apiopen.top/musicBroadcasting"
+    },
+    {
+      "title": "音乐电台详情接口：",
+      "url": "https://api.apiopen.top/musicBroadcastingDetails?channelname=public_tuijian_spring"
+    },
+    {
+      "title": "音乐详情接口：",
+      "url": "https://api.apiopen.top/musicDetails?id=604392760"
+    },
+    {
+      "title": "音乐排行榜接口：",
+      "url": "https://api.apiopen.top/musicRankings"
+    },
+    {
+      "title": "音乐排行榜详情接口：",
+      "url": "https://api.apiopen.top/musicRankingsDetails?type=1"
+    },
+    {
+      "title": "每日视频推荐接口：",
+      "url": "https://api.apiopen.top/todayVideo"
+    },
+    {
+      "title": "视频大纲获取接口：",
+      "url": "https://api.apiopen.top/videoHomeTab"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategory"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategoryDetails?id=14"
+    },
+    {
+      "title": "根据ID推荐接口：",
+      "url": "https://api.apiopen.top/videoRecommend?id=127398"
+    },
+    {
+      "title": "新闻接口：",
+      "url": "https://www.apiopen.top/journalismApi"
+    },
+    {
+      "title": "随机推荐热门段子（包含文字、图片、GIF、视频）：",
+      "url": "https://www.apiopen.top/satinApi?type=1&page=1"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】（包含文字、图片、GIF、视频）：",
+      "url": "https://www.apiopen.top/satinGodApi?type=1&page=1"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】评论列表：",
+      "url": "https://www.apiopen.top/satinCommentApi?id=27610708&page=1"
+    },
+    {
+      "title": "热门小说推荐列表",
+      "url": "https://www.apiopen.topovelApi"
+    },
+    {
+      "title": "小说搜索接口",
+      "url": "https://www.apiopen.topovelSearchApi?name=盗墓笔记"
+    },
+    {
+      "title": "小说详情接口",
+      "url": "https://www.apiopen.topovelInfoApi?name=盗墓笔记"
+    },
+    {
+      "title": "天气获取接口",
+      "url": "https://www.apiopen.top/weatherApi?city=成都"
+    },
+    {
+      "title": "美图获取接口",
+      "url": "https://www.apiopen.top/meituApi?page=1"
+    },
+    {
+      "title": "个性网名获取接口",
+      "url": "https://www.apiopen.top/femaleNameApi?page=1"
+    },
+    {
+      "title": "创建应用接口",
+      "url": "https://www.apiopen.top/createUserKey?appId=com.chat.peakchao&passwd=123456"
+    },
+    {
+      "title": "增加统计信息接口",
+      "url": "https://www.apiopen.top/addStatistics?appKey=00d91e8e0cca2b76f515926a36db68f5&type=点击统计&typeId=1&count=2"
+    },
+    {
+      "title": "查询统计信息接口",
+      "url": "https://www.apiopen.top/findStatistics?appKey=00d91e8e0cca2b76f515926a36db68f5"
+    },
+    {
+      "title": "用户注册接口",
+      "url": "https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone=13594347817&passwd=123654"
+    },
+    {
+      "title": "用户登陆接口",
+      "url": "https://www.apiopen.top/login?key=00d91e8e0cca2b76f515926a36db68f5&phone=13594347817&passwd=123456"
+    },
+    {
+      "title": "快递查询：",
+      "url": "https://api.apiopen.top/EmailSearch?number=1012002"
+    },
+    {
+      "title": "随机单句诗词推荐：",
+      "url": "https://api.apiopen.top/singlePoetry"
+    },
+    {
+      "title": "随机一首诗词推荐：",
+      "url": "https://api.apiopen.topecommendPoetry"
+    },
+    {
+      "title": "搜索古诗词：",
+      "url": "https://api.apiopen.top/searchPoetry?name=古风二首%20二"
+    },
+    {
+      "title": "搜索古诗词作者：",
+      "url": "https://api.apiopen.top/searchAuthors?name=李白"
+    },
+    {
+      "title": "模糊搜索古诗词（可搜索诗词名、诗词内容、诗词作者）：",
+      "url": "https://api.apiopen.top/likePoetry?name=李白"
+    },
+    {
+      "title": "获取宋朝古诗词：",
+      "url": "https://api.apiopen.top/getSongPoetry?page=1&count=20"
+    },
+    {
+      "title": "获取唐朝古诗词：",
+      "url": "https://api.apiopen.top/getTangPoetry?page=1&count=20"
+    },
+    {
+      "title": "新实时段子",
+      "url": "https://api.apiopen.top/getJoke?page=1&count=2&type=video"
+    },
+    {
+      "title": "通过Id查段子",
+      "url": "https://api.apiopen.top/getSingleJoke?sid=28654780"
+    },
+    {
+      "title": "音乐搜索接口：",
+      "url": "https://api.apiopen.top/searchMusic?name=不要说话"
+    },
+    {
+      "title": "音乐电台接口：",
+      "url": "https://api.apiopen.top/musicBroadcasting"
+    },
+    {
+      "title": "音乐电台详情接口：",
+      "url": "https://api.apiopen.top/musicBroadcastingDetails?channelname=public_tuijian_spring"
+    },
+    {
+      "title": "音乐详情接口：",
+      "url": "https://api.apiopen.top/musicDetails?id=604392760"
+    },
+    {
+      "title": "音乐排行榜接口：",
+      "url": "https://api.apiopen.top/musicRankings"
+    },
+    {
+      "title": "音乐排行榜详情接口：",
+      "url": "https://api.apiopen.top/musicRankingsDetails?type=1"
+    },
+    {
+      "title": "每日视频推荐接口：",
+      "url": "https://api.apiopen.top/todayVideo"
+    },
+    {
+      "title": "视频大纲获取接口：",
+      "url": "https://api.apiopen.top/videoHomeTab"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategory"
+    },
+    {
+      "title": "视频分类推荐接口：",
+      "url": "https://api.apiopen.top/videoCategoryDetails?id=14"
+    },
+    {
+      "title": "根据ID推荐接口：",
+      "url": "https://api.apiopen.top/videoRecommend?id=127398"
+    },
+    {
+      "title": "新闻接口",
+      "url": "https://www.apiopen.top/journalismApi"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】评论列表",
+      "url": "https://www.apiopen.top/satinCommentApi?id=27610708&page=1"
+    },
+    {
+      "title": "热门小说推荐列表",
+      "url": "https://www.apiopen.topovelApi"
+    },
+    {
+      "title": "小说搜索接口",
+      "url": "https: //www.apiopen.topovelSearchApi?name=盗墓笔记"
+    },
+    {
+      "title": "随机推荐热门段子【神评版本】 ",
+      "url": "https://www.apiopen.top/satinGodApi?type=1&page=1 "
+    },
+    {
+      "title ": "美图获取接口",
+      "url ": "https: //www.apiopen.top/meituApi?page=1"
+    },
+    {
+      "title": "女性个性网名获取接口 ",
+      "url": "https://www.apiopen.top/femaleNameApi?page=1"
+    },
+    {
+      "title ": "天气获取接口",
+      "url ": "https: //www.apiopen.top/weatherApi?city=成都"
+    }]
+  }
+  ]
+}

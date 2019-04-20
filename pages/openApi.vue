@@ -1,25 +1,39 @@
 <template>
   <section class="con-main">
     <div class="linkTeamShare">
-      <h1>前端-团队网址</h1>
+      <h1>开发api接口</h1>
       <!-- {{resData}} -->
       <div class="link-lv-1" v-for="(item,index) in resData" :key="index">
         <h2>{{item.title}}</h2>
         <div class="link-lv-2">
           <!-- <h4> -->
             <ul>
-              <li v-for="(item2,index2) in item.data" :key="index2"><a :href="item2.url" :title="item2.title" :alt="item2.title" target="_blank">{{item2.title}}</a></li>
+              <li v-for="(item2,index2) in item.data" :key="index2">
+                <span>{{item2.title}}</span>
+                <a :href="item2.url" :title="item2.title" :alt="item2.title" target="_blank">
+                  {{item2.url}}
+                </a>
+              </li>
             </ul>
             
           <!-- </h4> -->
         </div>
       </div>
+      <h1>开放平台</h1>
+      <ul>
+        <li v-for="(item,index) in listData" :key="index">
+          <ul>
+              <li v-for="(item2,index2) in item.data" :key="index2">
+                <span>{{item2.title}}</span>
+                <a :href="item2.url" :title="item2.title" :alt="item2.title" target="_blank">
+                  {{item2.url}}
+                </a>
+              </li>
+            </ul>
+          </li>
+      </ul>
     </div>
-    <h1>其他相关分享(持续更新)</h1>
-    <ul>
-      <li><a href="https://github.com/niezhiyang/open_source_team#1%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4" target="_blank">GitHub国内顶尖团队的开源地址</a></li>
-      <li><a href="https://github.com/webproblem/learning-article" target="_blank">GitHub前端资源整合</a></li>
-    </ul>
+    
   </section>
 </template>
 
@@ -33,7 +47,8 @@ export default {
   data () {
     return {
       title: '倪盾的个人主页',
-      resData:{}
+      resData:{},
+      listData:[],
     }
   },
   head () {
@@ -47,7 +62,7 @@ export default {
   },
   asyncData (context) {
     // console.log('%j','asyncData');
-    return context.app.$axios.get(context.app.$urlConfig.teamlistshare)
+    return context.app.$axios.get(context.app.$urlConfig.openApi)
     .then((res) => {
       // console.info('%j','asyncData axios',res);
       if(res && res.data){
@@ -74,7 +89,7 @@ export default {
     // this.getData('/');
     // this.getData('/api/home');
     // this.getData('/api/home/list');
-    // this.getData('/api');
+    this.getData(this.$urlConfig.OpenPlatform);
     // this.getData('/a');
   },
   methods: {
@@ -83,11 +98,10 @@ export default {
         .then(({ data }) => {
           console.log("数据请求成功");
           console.log(data);
-          // try{
-          //   console.log(JSON.parse(data));
-          // }catch(e){
-          //   console.log(e);
-          // }
+          if(200===data.code){
+            this.listData = data.data;
+          }
+           
         })
         .catch((error) => {
           console.log(error);

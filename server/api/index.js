@@ -15,6 +15,8 @@ router.use('/home',require('./home'))
 
 router.use('/color',require('./color'))
 
+router.use('/openApi',require('./openApi'))
+
 router.use('/wj',require('./weijing'))
 
 router.get('/', function(req, res, next){//首页路由

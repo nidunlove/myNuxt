@@ -40,7 +40,7 @@ export default {
   },
   head () {
     return {
-      title: this.title,
+      title: this.$store.state.title+'|'+this.title,
       meta: [
         { hid: 'keywords', name: 'keywords', content: this.$store.state.keywords },
         { hid: 'description', name: 'description', content: this.$store.state.description }

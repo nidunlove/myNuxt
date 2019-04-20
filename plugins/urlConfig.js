@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'development') {
     // MY_BASEURL = "/baseUrl";
 } else {
     // build 线上和测试 run build
-    MY_BASEURL = "http://localhost";
+    MY_BASEURL = "http://668ni.com";
 }
 
 
@@ -19,6 +19,10 @@ const urlConfig = {
 	orglistshare: MY_BASEURL+'/api/home/orglistshare',
 	//色彩
 	color: MY_BASEURL+'/api/color/color',
+	//开放Api
+	openApi: MY_BASEURL+'/api/openApi/openApi',
+	//开放平台
+	OpenPlatform: MY_BASEURL+'/api/openApi/OpenPlatform',
 }
 
 // const Vue =  {
