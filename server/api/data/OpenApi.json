@@ -1,124 +1,13 @@
 {
   "code": 200,
   "data": [
-  {
-    "title": "聚合数据www.juhe.com",
-    "data": [
-    {
-      "title": "手机号码归属地API",
-      "url": "https://www.juhe.cn/docs/api/id/11"
-    },
-    {
-      "title": "历史上的今天",
-      "url": "https://www.juhe.cn/docs/api/id/63 "
-    },
-    {
-      "title": "股票数据",
-      "url": "https://www.juhe.cn/docs/api/id/21"
-    },
-    {
-      "title": "全国WIFI接口",
-      "url": "https://www.juhe.cn/docs/api/id/18"
-    },
-    {
-      "title": "星座运势",
-      "url": "https://www.juhe.cn/docs/api/id/58"
-    },
-    {
-      "title": "黄金数据",
-      "url": "https://www.juhe.cn/docs/api/id/29"
-    },
-    {
-      "title": "语音识别",
-      "url": "https://www.juhe.cn/docs/api/id/134"
-    },
-    {
-      "title": "周公解梦",
-      "url": "https://www.juhe.cn/docs/api/id/64"
-    },
-    {
-      "title": "天气预报",
-      "url": "https://www.juhe.cn/docs/api/id/73"
-    },
-    {
-      "title": "身份证查询",
-      "url": "https://www.juhe.cn/docs/api/id/38"
-    },
-    {
-      "title": "笑话大全",
-      "url": "https://www.juhe.cn/docs/api/id/65"
-    },
-    {
-      "title": "老黄历",
-      "url": "https://www.juhe.cn/docs/api/id/29"
-    },
-    {
-      "title": "网站安全检测",
-      "url": "https://www.juhe.cn/docs/api/id/19"
-    },
-    {
-      "title": "手机固话来电显示",
-      "url": "https://www.juhe.cn/docs/api/id/72"
-    },
-    {
-      "title": "基金财务数据",
-      "url": "https://www.juhe.cn/docs/api/id/28"
-    },
-    {
-      "title": "成语词典",
-      "url": "https://www.juhe.cn/docs/api/id/157"
-    },
-    {
-      "title": "新闻头条",
-      "url": "https://www.juhe.cn/docs/api/id/235"
-    },
-    {
-      "title": "IP地址",
-      "url": "https://www.juhe.cn/docs/api/id/1"
-    },
-    {
-      "title": "问答机器人",
-      "url": "https://www.juhe.cn/docs/api/id/112"
-    },
-    {
-      "title": "汇率API",
-      "url": "https://www.juhe.cn/docs/api/id/19"
-    },
-    {
-      "title": " 汇率API",
-      "url": "https://www.juhe.cn/docs/api/id/80"
-    },
-    {
-      "title": "电影票房",
-      "url": "https://www.juhe.cn/docs/api/id/44"
-    },
-    {
-      "title": "万年历",
-      "url": "https://www.juhe.cn/docs/api/id/177"
-    },
-    {
-      "title": "NBA赛事",
-      "url": "https://www.juhe.cn/docs/api/id/92"
-    }]
-  },
+  
   {
     "title": "开放api https://www.apiopen.top",
     "data": [
     {
-      "title": "新实时段子 ",
+      "title": "新实时段子",
       "url ": "https://api.apiopen.top/getJoke?page=1&count=2&type=video"
-    },
-    {
-      "title": "通过Id查段子",
-      "url": "https://api.apiopen.top/getSingleJoke?sid=28654780"
-    },
-    {
-      "title": "快递查询：",
-      "url": "https://api.apiopen.top/EmailSearch?number=1012002"
-    },
-    {
-      "title": "新实时段子 ",
-      "url ": "https: //api.apiopen.top/getJoke?page=1&count=2&type=video"
     },
     {
       "title": "通过Id查段子",
@@ -619,6 +508,106 @@
     {
       "title ": "天气获取接口",
       "url ": "https: //www.apiopen.top/weatherApi?city=成都"
+    }]
+  },
+  {
+    "title": "聚合数据www.juhe.com",
+    "data": [
+    {
+      "title": "手机号码归属地API",
+      "url": "https://www.juhe.cn/docs/api/id/11"
+    },
+    {
+      "title": "历史上的今天",
+      "url": "https://www.juhe.cn/docs/api/id/63 "
+    },
+    {
+      "title": "股票数据",
+      "url": "https://www.juhe.cn/docs/api/id/21"
+    },
+    {
+      "title": "全国WIFI接口",
+      "url": "https://www.juhe.cn/docs/api/id/18"
+    },
+    {
+      "title": "星座运势",
+      "url": "https://www.juhe.cn/docs/api/id/58"
+    },
+    {
+      "title": "黄金数据",
+      "url": "https://www.juhe.cn/docs/api/id/29"
+    },
+    {
+      "title": "语音识别",
+      "url": "https://www.juhe.cn/docs/api/id/134"
+    },
+    {
+      "title": "周公解梦",
+      "url": "https://www.juhe.cn/docs/api/id/64"
+    },
+    {
+      "title": "天气预报",
+      "url": "https://www.juhe.cn/docs/api/id/73"
+    },
+    {
+      "title": "身份证查询",
+      "url": "https://www.juhe.cn/docs/api/id/38"
+    },
+    {
+      "title": "笑话大全",
+      "url": "https://www.juhe.cn/docs/api/id/65"
+    },
+    {
+      "title": "老黄历",
+      "url": "https://www.juhe.cn/docs/api/id/29"
+    },
+    {
+      "title": "网站安全检测",
+      "url": "https://www.juhe.cn/docs/api/id/19"
+    },
+    {
+      "title": "手机固话来电显示",
+      "url": "https://www.juhe.cn/docs/api/id/72"
+    },
+    {
+      "title": "基金财务数据",
+      "url": "https://www.juhe.cn/docs/api/id/28"
+    },
+    {
+      "title": "成语词典",
+      "url": "https://www.juhe.cn/docs/api/id/157"
+    },
+    {
+      "title": "新闻头条",
+      "url": "https://www.juhe.cn/docs/api/id/235"
+    },
+    {
+      "title": "IP地址",
+      "url": "https://www.juhe.cn/docs/api/id/1"
+    },
+    {
+      "title": "问答机器人",
+      "url": "https://www.juhe.cn/docs/api/id/112"
+    },
+    {
+      "title": "汇率API",
+      "url": "https://www.juhe.cn/docs/api/id/19"
+    },
+    {
+      "title": " 汇率API",
+      "url": "https://www.juhe.cn/docs/api/id/80"
+    },
+    {
+      "title": "电影票房",
+      "url": "https://www.juhe.cn/docs/api/id/44"
+    },
+    {
+      "title": "万年历",
+      "url": "https://www.juhe.cn/docs/api/id/177"
+    },
+    {
+      "title": "NBA赛事",
+      "url": "https://www.juhe.cn/docs/api/id/92"
     }]
   }
   ]

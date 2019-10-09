@@ -5,6 +5,9 @@
 			"data": [{
 				"title": "淘宝前端团队FED",
 				"url": "http://taobaofed.org/"
+			},{
+				"title": "阿里国际UED",
+				"url": "http://www.aliued.com/"
 			}]
 		},
 		{
@@ -32,6 +35,9 @@
 			},{
 				"title": "百度 MUX 百度用户体验中心",
 				"url": "http://mux.baidu.com/"
+			},{
+				"title": "百度 EFE 前端团队",
+				"url": "https://efe.baidu.com/"
 			}]
 		},
 		{

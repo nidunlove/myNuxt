@@ -23,6 +23,19 @@ const urlConfig = {
 	openApi: MY_BASEURL+'/api/openApi/openApi',
 	//开放平台
 	OpenPlatform: MY_BASEURL+'/api/openApi/OpenPlatform',
+
+  //后台管理
+  adminLogin:MY_BASEURL+'/admin/sys/login',
+  adminLogout:MY_BASEURL+'/admin/sys/logout',
+  //爬取页面
+  //taobao fed
+  taobaofedWormStart: MY_BASEURL+'/admin/internetWorm/taobaofed_start',
+  //新增数据
+  addIWormList: MY_BASEURL+'/admin/internetWorm/iWormAddList',
+  //爬取的数据，分页
+  iWormPageList: MY_BASEURL+'/admin/internetWorm/iWormManage',
+  //根据id删除多条
+  deleteByIds: MY_BASEURL+'/admin/internetWorm/iWormDelByIds',
 }
 
 // const Vue =  {

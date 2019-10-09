@@ -9,10 +9,10 @@
           <!-- <h4> -->
             
             <ul>
-              <li v-for="(item2,index2) in item.data" :key="index2" @click="copyToClipBoard($event,item2)">
+              <li v-for="(item2,index2) in item.data" :key="index2"  @click="copyToClipBoard($event)">
                 <div class="colorBlock" :style="{backgroundColor:'#'+item2 }"></div>
-                <h3>#{{item2}}</h3>
-                <h3>rgb:({{colorHexToRgb(item2)}})</h3>
+                <h3><input :value="'#'+item2" readonly @click="copyToClipBoard($event)" /></h3>
+                <h3><input :value="'rgb:('+colorHexToRgb(item2)+')'" readonly  @click="copyToClipBoard($event)" /></h3>
               </li>
                 
             </ul>
@@ -88,12 +88,34 @@ export default {
           }
           return sColorChange.join(",");
     },
-    copyToClipBoard($event,text){
+    copyToClipBoard($event){
+      $event.stopPropagation(); 
+      console.log(arguments);
+      var  selectedBedDom = {};
+      if(!!$event.currentTarget.childNodes && $event.currentTarget.childNodes.length>3){//父层
+        selectedBedDom = $event.currentTarget.childNodes[2].childNodes[0];//dom元素
+      } else {
+        selectedBedDom = $event.currentTarget;//dom元素
+      }
+      console.log(selectedBedDom);
+      console.log(selectedBedDom.value);
+      selectedBedDom.select();
+      // var selCrea=selectedBedDom.createTextRange();  
+      // document.body.createTextRange(); 
+      // selCrea.execCommand("Copy");
+      document.execCommand("Copy");
+      // alert("已复制好，可贴粘。");
+      // window.clipboardData.setData("Text",selectedBedDom.value);
       // var clipBoardContent="";
       // clipBoardContent+=document.title;
       // clipBoardContent+="";
       // clipBoardContent+=this.location.href;
-      console.log($event);
+      
+      // function oCopy(obj){
+       // obj.select();
+       // js=obj.createTextRange();
+       // js.execCommand("Copy")
+       // alert("复制成功!");
       // try {
       //   window.clipboardData.setData("Text",'#'+text);
       //   alert("复制成功");
