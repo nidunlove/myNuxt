@@ -8,8 +8,8 @@ var cheerio = require('cheerio');
 var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 
 // 定义网络爬虫的目标地址：淘宝fed主页
-var url = 'https://fed.taobao.org';
-var source_name = "淘宝fed";
+var url = 'https://techblog.toutiao.com';
+var source_name = "字节跳动技术博客";
 
 //该模块入口
 const Service = {};
@@ -53,18 +53,18 @@ function filterNews(html) {
     // 沿用JQuery风格，定义$
     var $ = cheerio.load(html);
     //最新文章dom
-    var newDomList = $("#recent-post");
+    var newDomList = $("#content");
     //遍历数据
-    newDomList.find('li').each(function(item) {
-      var newItem = $(this).find(".item-inner");
+    newDomList.find('.article-type-post').each(function(item) {
+      var newItem = $(this).find(".article-inner").eq(0);
       // 向数组插入数据
       reData.push({
-      	classify: newItem.find(".item-category a").text(),
-        title: newItem.find(".item-title a").text(),
-        href: ArticleBaseUrl+newItem.find(".item-title a").attr('href'),
-        desc: "",
-        author: newItem.find(".item-author").text(),
-        time: dateFilter.FilterDateTimeStr_Type1(newItem.find(".item-date time").text()),
+      	classify: "",
+        title: newItem.find(".article-header a.article-title").text(),
+        href: ArticleBaseUrl+newItem.find(".article-header a.article-title").attr('href'),
+        desc: newItem.find(".article-entry").text(),
+        author: "",
+        time: dateFilter.FilterDateTimeStr_Type1(newItem.find(".article-footer time").text()),
         creat_time: new Date().getTime(),
         source_name : source_name,
         source_url : url,

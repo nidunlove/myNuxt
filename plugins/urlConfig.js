@@ -36,6 +36,14 @@ const urlConfig = {
   taobaofedWormStart: MY_BASEURL+'/admin/internetWorm/taobaofed_start',
   //360奇舞团
   i360_75team_start: MY_BASEURL+'/admin/internetWorm/i360_75team_start',
+  //腾讯 alloyteam
+  tencent_AlloyTeam_start: MY_BASEURL+'/admin/internetWorm/tencent_AlloyTeam_start',
+  //京东 凹凸实验室
+  jd_aotu_start: MY_BASEURL+'/admin/internetWorm/jd_aotu_start',
+  //网易 feg前端团队
+  netEase_feg_start: MY_BASEURL+'/admin/internetWorm/netEase_feg_start',
+  //字节跳动技术博客
+  toutiao_blog_start: MY_BASEURL+'/admin/internetWorm/toutiao_blog_start',
 
   //新增数据
   addIWormList: MY_BASEURL+'/admin/internetWorm/iWormAddList',

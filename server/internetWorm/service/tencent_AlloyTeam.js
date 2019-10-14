@@ -1,15 +1,15 @@
 //参考：https://blog.csdn.net/u012187452/article/details/73478028
 // 加载http模块
-// var http = require('http');
-var http = require('https');
+var http = require('http');
+// var http = require('https');
 // Cheerio 是一个Node.js的库， 它可以从html的片断中构建DOM结构，然后提供像jquery一样的css选择器查询
 var cheerio = require('cheerio');
 
 var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 
-// 定义网络爬虫的目标地址：淘宝fed主页
-var url = 'https://fed.taobao.org';
-var source_name = "淘宝fed";
+// 定义网络爬虫的目标地址：奇舞团博客
+var url = 'http://www.alloyteam.com/category/webdevelop/';
+var source_name = "腾讯AlloyTeam";
 
 //该模块入口
 const Service = {};
@@ -53,18 +53,22 @@ function filterNews(html) {
     // 沿用JQuery风格，定义$
     var $ = cheerio.load(html);
     //最新文章dom
-    var newDomList = $("#recent-post");
+    var newDomList = $("#content");
     //遍历数据
-    newDomList.find('li').each(function(item) {
-      var newItem = $(this).find(".item-inner");
+    newDomList.find('.content_text').each(function(item) {
+      var newItem = $(this);
+
+      var time =newItem.find(".title .blogPs").text().replace(/\s/g,"");//取掉空格
+          time=time.match(/on(\S*)by/)[1];//正则取出IF和THEN之间的字符串
       // 向数组插入数据
       reData.push({
-      	classify: newItem.find(".item-category a").text(),
-        title: newItem.find(".item-title a").text(),
-        href: ArticleBaseUrl+newItem.find(".item-title a").attr('href'),
+      	classify: newItem.find(".title .blogPs a").eq(0).text(),
+        title: newItem.find(".title a.blogTitle").text(),
+        href: ArticleBaseUrl+newItem.find(".title a.blogTitle").attr('href'),
         desc: "",
-        author: newItem.find(".item-author").text(),
-        time: dateFilter.FilterDateTimeStr_Type1(newItem.find(".item-date time").text()),
+        author: newItem.find(".title .blogPs a").eq(1).text(),
+        // time: time,
+        time: dateFilter.FilterDateTimeStr_Type3(time),
         creat_time: new Date().getTime(),
         source_name : source_name,
         source_url : url,
@@ -76,6 +80,8 @@ function filterNews(html) {
   //返回数据
   return reData;
 }
+
+
 
 
 module.exports = Service;

@@ -5,6 +5,7 @@ var http = require('https');
 // Cheerio 是一个Node.js的库， 它可以从html的片断中构建DOM结构，然后提供像jquery一样的css选择器查询
 var cheerio = require('cheerio');
 
+var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 
 // 定义网络爬虫的目标地址：奇舞团博客
 var url = 'https://75team.com/post/list';
@@ -63,7 +64,7 @@ function filterNews(html) {
         href: ArticleBaseUrl+newItem.find(".title a").attr('href'),
         desc: "",
         author: newItem.find(".meta .author").text(),
-        time: newItem.find(".meta .date").text(),
+        time: dateFilter.FilterDateTimeStr_Type2(newItem.find(".meta .date").text()),
         creat_time: new Date().getTime(),
         source_name : source_name,
         source_url : url,
@@ -75,6 +76,8 @@ function filterNews(html) {
   //返回数据
   return reData;
 }
+
+
 
 
 module.exports = Service;

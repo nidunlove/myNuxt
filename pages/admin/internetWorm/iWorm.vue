@@ -1,19 +1,17 @@
 <template>
   <div class="">
 
-
     <!-- <el-button @click="openBatchEdit()" type="warning" plain size="small" icon="el-icon-edit">删除</el-button> -->
     <!-- <el-button @click="deleteByIdsAction()" type="danger" icon="el-icon-delete">删除</el-button> -->
 
-    <el-button @click="addIWormAction()" type="warning" icon="el-icon-plus">插入到数据库</el-button>
-
-    <el-button @click="WormStartAction('taobaofed')" type="primary" icon="el-icon-aim">taobaofed</el-button>
-
-    <el-button @click="WormStartAction('360_75team')" type="primary" icon="el-icon-aim">360奇舞团</el-button>
-
-
-
-
+   <el-button @click="addIWormAction()" type="warning" icon="el-icon-plus">插入到数据库</el-button>
+   
+   <el-button @click="WormStartAction('taobaofedWormStart')" type="primary" icon="el-icon-aim">taobaofed</el-button>
+   <el-button @click="WormStartAction('i360_75team_start')" type="primary" icon="el-icon-aim">360奇舞团</el-button>
+	 <el-button @click="WormStartAction('tencent_AlloyTeam_start')" type="primary" icon="el-icon-aim">腾讯alloyTeam</el-button>
+   <el-button @click="WormStartAction('jd_aotu_start')" type="primary" icon="el-icon-aim">京东aotu</el-button>
+   <el-button @click="WormStartAction('netEase_feg_start')" type="primary" icon="el-icon-aim">网易feg</el-button>
+   <el-button @click="WormStartAction('toutiao_blog_start')" type="primary" icon="el-icon-aim">字节跳动博客</el-button>
 
     <el-table :data="tableData" style="width: 100%" size="mini" stripe :border="false" ref="multipleTable" :highlight-current-row="true"
       @selection-change="handleSelectionChange" @row-click="handleCurrentChange"  v-loading="loading">
@@ -180,11 +178,23 @@
       //爬取
       WormStartAction(type) {
         // this.taobaofedWormStart();
-        if('taobaofed'===type){
-          this.iWormStart(this.$urlConfig.taobaofedWormStart);
-        } else if('360_75team'===type){
-          this.iWormStart(this.$urlConfig.i360_75team_start);
-        }
+
+        this.iWormStart(this.$urlConfig[type]);
+
+        // if('taobaofedWormStart'===type){
+        //   this.iWormStart(this.$urlConfig.taobaofedWormStart);
+        // } else if('i360_75team_start'===type){
+        //   this.iWormStart(this.$urlConfig.i360_75team_start);
+        // } else if('tencent_AlloyTeam_start'===type){
+        //   this.iWormStart(this.$urlConfig.tencent_AlloyTeam_start);
+        // } else if('jd_aotu_start'===type){
+        //   this.iWormStart(this.$urlConfig.jd_aotu_start);
+        // } else if('netEase_feg_start'===type){
+        //   this.iWormStart(this.$urlConfig.netEase_feg_start);
+        // } else if('toutiao_blog_start'===type){
+        //   this.iWormStart(this.$urlConfig.toutiao_blog_start);
+        // }
+
 
       },
 
