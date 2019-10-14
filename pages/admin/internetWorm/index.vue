@@ -31,6 +31,9 @@
       </el-table-column>
       <el-table-column prop="desc" label="描述">
       </el-table-column>
+      <el-table-column prop="author" label="author">
+      </el-table-column>
+      
       <el-table-column prop="time" label="文章时间">
       </el-table-column>
       <el-table-column prop="creat_time" label="爬取时间">
@@ -40,6 +43,7 @@
         <template slot-scope="scope">
           <!-- <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button> -->
           <el-button @click="updateHomeDataAction($event,scope.row,1)" type="primary" icon="el-icon-top">置首</el-button>
+          <br />
           <el-button @click="updateHomeDataAction($event,scope.row,null)" type="warning" icon="el-icon-bottom">恢复</el-button>
           <!-- <el-button type="text" size="small">编辑</el-button> -->
         </template>

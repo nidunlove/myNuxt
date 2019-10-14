@@ -11,7 +11,7 @@
               <!-- <p>Desc:{{item.desc}}</p> -->
               <p>来源：<a :href="item.source_url" :title="item.source_name" :alt="item.source_name" target="_blank">{{item.source_name}}</a></p>
               <p v-if="!!item.time">时间：{{item.time}}</p>
-              <p v-if="!!item.author">作者：{{item.author}}</p>
+              <p v-if="!!item.source_name">作者：{{item.author}}</p>
             </li>
           </ul>
         <!-- </div> -->
@@ -53,8 +53,7 @@ export default {
     return _vm.$axios.post(_vm.$urlConfig.informationPageList,{
       pageSize: 20,
       currentPage: 1,
-      filter: { order:1 },
-      sort: { time:-1 },
+      filter:{ order:1 },
     })
     .then((res) => {
       // console.info('%j','asyncData axios',res);

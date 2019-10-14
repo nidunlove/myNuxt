@@ -36,6 +36,8 @@
       </el-table-column>
       <el-table-column prop="desc" label="描述">
       </el-table-column>
+      <el-table-column prop="author" label="author">
+      </el-table-column>
       <el-table-column prop="time" label="文章时间">
       </el-table-column>
       <el-table-column prop="creat_time" label="爬取时间">

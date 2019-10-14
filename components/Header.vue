@@ -12,7 +12,10 @@
       <nav class="nav-main">
         <ul class="clearfix">
           <li class="fl">
-            <nuxt-link to="/" target="">知名团队</nuxt-link>
+            <nuxt-link to="/" target="">前端信息</nuxt-link>
+          </li>
+          <li class="fl">
+            <nuxt-link to="/team" target="">知名团队</nuxt-link>
           </li>
           <li class="fl">
             <nuxt-link to="/orgShare" target="">网址导航</nuxt-link>

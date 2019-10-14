@@ -25,6 +25,8 @@ const urlConfig = {
 	openApi: MY_BASEURL+'/api/openApi/openApi',
 	//开放平台
 	OpenPlatform: MY_BASEURL+'/api/openApi/OpenPlatform',
+  //前端信息，分页
+  informationPageList: MY_BASEURL+'/admin/internetWorm/iWormManage',
 
   //后台管理
   adminLogin:MY_BASEURL+'/admin/sys/login',

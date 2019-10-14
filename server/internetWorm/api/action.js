@@ -31,9 +31,11 @@ router.post('/i360_75team_start', function(req, res, next) {
 /*分页*/
 router.post('/iWormManage', function(req, res, next) {
 
-  let whereStr = {};
-  let mysort = {};
+  // let whereStr = req.filter;
+  // let mysort = {};
   let reqBody = req.body;
+  let mysort = reqBody.sort;
+  let whereStr = reqBody.filter;
   let limit = reqBody.pageSize || 10;
   var page = reqBody.currentPage || 1;
 
