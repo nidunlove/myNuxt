@@ -7,7 +7,9 @@
 
     <el-button @click="addIWormAction()" type="warning" icon="el-icon-plus">插入到数据库</el-button>
 
-    <el-button @click="WormStartAction()" type="primary" icon="el-icon-aim">taobaofed爬取</el-button>
+    <el-button @click="WormStartAction('taobaofed')" type="primary" icon="el-icon-aim">taobaofed</el-button>
+
+    <el-button @click="WormStartAction('360_75team')" type="primary" icon="el-icon-aim">360奇舞团</el-button>
 
 
 
@@ -21,6 +23,7 @@
 
       <!-- <el-table-column prop="_id" label="ID">
               </el-table-column> -->
+
       <el-table-column prop="source_name" label="来源">
       </el-table-column>
       <el-table-column prop="source_url" label="来源地址">
@@ -37,10 +40,10 @@
       </el-table-column>
       <el-table-column prop="creat_time" label="爬取时间">
       </el-table-column>
-
       <el-table-column fixed="right" label="操作" width="100">
         <template slot-scope="scope">
           <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+          <!-- <el-button @click="handleClick(scope.row)" type="text" size="small">置首页</el-button> -->
           <!-- <el-button type="text" size="small">编辑</el-button> -->
         </template>
       </el-table-column>
@@ -173,17 +176,51 @@
       },
 
       //爬取
-      WormStartAction() {
-        this.taobaofedWormStart();
+      WormStartAction(type) {
+        // this.taobaofedWormStart();
+        if('taobaofed'===type){
+          this.iWormStart(this.$urlConfig.taobaofedWormStart);
+        } else if('360_75team'===type){
+          this.iWormStart(this.$urlConfig.i360_75team_start);
+        }
+
       },
 
       //爬取页面
-      taobaofedWormStart() {
+//       taobaofedWormStart() {
+//
+//         // this.tableData = [{'title':'11'},{'title':'22'},{'title':'33'},{'title':'44'},{'title':'55'}];
+//         // return;
+//         this.loading = true;
+//         this.$axios.post(this.$urlConfig.taobaofedWormStart, {})
+//           .then(({
+//             data
+//           }) => {
+//             console.log("数据请求成功");
+//             console.log(data);
+//             this.loading = false;
+//             if (200 === data.code) {
+//               // this.tableData = data.data;
+//               // this.pageListData();
+//               this.tableData = data.data;
+//             } else {
+//               this.$message.warning(data.msg ? data.msg : '数据有误');
+//             }
+//           })
+//           .catch((error) => {
+//             this.loading = false;
+//             console.log(error);
+//             console.log("请求失败");
+//             this.$message.error("请求失败");
+//           });
+//       },
 
+      //爬取页面
+      iWormStart(url) {
         // this.tableData = [{'title':'11'},{'title':'22'},{'title':'33'},{'title':'44'},{'title':'55'}];
         // return;
         this.loading = true;
-        this.$axios.post(this.$urlConfig.taobaofedWormStart, {})
+        this.$axios.post(url, {})
           .then(({
             data
           }) => {
@@ -202,7 +239,7 @@
             this.loading = false;
             console.log(error);
             console.log("请求失败");
-            this.$message.error(error);
+            this.$message.error("请求失败");
           });
       },
 
@@ -232,7 +269,7 @@
             this.loading = false;
             console.log(error);
             console.log("请求失败");
-            this.$message.error(error);
+            this.$message.error("请求失败");
           });
       },
 

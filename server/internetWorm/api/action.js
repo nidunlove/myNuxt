@@ -3,18 +3,29 @@ const router = express.Router()
 
 var _msg = require('../../mongoBase/msg')
 
-var taobaofed = require('../service/taobaofed.js');
+var taobao_fed = require('../service/taobao_fed.js');
+
+var i360_75team = require('../service/360_75team.js');
 
 var TestService = require("../../mongoose/Service/Test.js");
 
 /*淘宝fed，抓取*/
 router.post('/taobaofed_start', function(req, res, next) {
-  taobaofed.action().then(result => {
+  taobao_fed.action().then(result => {
     _msg.pass(res,'',result)
   }).catch(err => {
     _msg.fail(res,'500',500)
     console.log(err);
-  });;
+  });
+});
+/*360奇舞团，抓取*/
+router.post('/i360_75team_start', function(req, res, next) {
+  i360_75team.action().then(result => {
+    _msg.pass(res,'',result)
+  }).catch(err => {
+    _msg.fail(res,'500',500)
+    console.log(err);
+  });
 });
 
 /*分页*/
@@ -54,6 +65,25 @@ router.post('/iWormDelByIds', function(req, res, next) {
     _msg.fail(res,'500',500)
     console.log(err);
   });
+});
+/*更新order*/
+router.post('/iWormUpdateOrder', function(req, res, next) {
+  let id = req.body.id;
+  let order = req.body.order;
+  TestService.findByIdAndUpdate(id, {order:order},{}).then(res_db => {
+    _msg.pass(res,'',res_db)
+  }).catch(err => {
+    _msg.fail(res,'500',500)
+    console.log(err);
+  });
+  // let whereStr = {id:id};
+  // let updateStr = {order:order};
+  // TestService.updateOne(whereStr, updateStr).then(res_db => {
+  //   _msg.pass(res,'',res_db)
+  // }).catch(err => {
+  //   _msg.fail(res,'500',500)
+  //   console.log(err);
+  // });
 });
 
 module.exports = router;

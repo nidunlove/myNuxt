@@ -29,6 +29,7 @@ export const actions = {
         username: userData.username
       })
     } catch (error) {
+		 console.log(error);
       if (error.response && error.response.status === 401) {
         throw new Error('Bad credentials')
       }

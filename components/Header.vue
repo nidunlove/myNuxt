@@ -5,17 +5,17 @@
         <nuxt-link to="/" target="_blank">
           <i class="iconfont icon-gerenkongjian"></i>
           <h1>一枚前端开发</h1>
-          <h2 style="font-size: 12px;color:#999;">倪盾的个人主页</h2>
+          <h2 style="font-size: 12px;color:#999;">倪盾的主页</h2>
         </nuxt-link>
       </nav>
       <!--  -->
       <nav class="nav-main">
         <ul class="clearfix">
           <li class="fl">
-            <nuxt-link to="/" target="">前端-团队网址</nuxt-link>
+            <nuxt-link to="/" target="">知名团队</nuxt-link>
           </li>
           <li class="fl">
-            <nuxt-link to="/orgShare" target="">前端-网址导航</nuxt-link>
+            <nuxt-link to="/orgShare" target="">网址导航</nuxt-link>
           </li>
           <li class="fl">
             <nuxt-link to="/color" target="">色彩</nuxt-link>
@@ -44,7 +44,7 @@
         </ul>
       </nav>
       <nav class="git-logo">
-        
+
         <a href="https://blog.csdn.net/nidunlove" title="csdn" alt="csdn" target="_blank">
           <i class="iconfont icon-csdn"></i>
         </a>

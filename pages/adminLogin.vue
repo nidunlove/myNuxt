@@ -16,7 +16,7 @@
       </button>
     </form> -->
 
-    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
+    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" v-loading="loading">
       <el-form-item label="用户名" prop="formUsername">
         <el-input v-model="ruleForm.formUsername" maxlength="20" placeholder="请输入用户名" @keyup.enter.native="submitForm('ruleForm')"></el-input>
       </el-form-item>
@@ -91,7 +91,7 @@
         formError: null,
         // formUsername: '',
         // formPassword: '',
-
+        loading: false,
         ruleForm: {
           formUsername: '',
           formPassword: '',
@@ -137,6 +137,7 @@
       },
 
       async login() {
+        this.loading = true;
         try {
           let loginUrl = this.$urlConfig.adminLogin;
           await this.$store.dispatch('login', {
@@ -151,7 +152,9 @@
           this.$router.push({
             name: 'admin'
           });
+          this.loading = false;
         } catch (e) {
+          this.loading = false;
           this.formError = e.message;
         }
       },

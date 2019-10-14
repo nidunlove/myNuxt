@@ -32,13 +32,13 @@ router.post('/login', (req, res) => {
   let username = reqBody.username;
   var password = reqBody.password;
 
-  console.log(req.session);
-  console.log(username);
-  console.log(password);
+  // console.log(req.session);
+  // console.log(username);
+  // console.log(password);
   if(username === 'nidun' && password === '88646797nd'){
     req.session.authUser = { username: username };
     let res_data = {username:username,msg:"ok"};
-    console.log(res_data);
+    // console.log(res_data);
     _msg.pass(res,'',res_data);
     // res.redirect('/admin');
   } else {

@@ -61,6 +61,32 @@ Service.updateMany = (whereStr, updateStr) => {
   return Test.updateMany(whereStr, updateStr);
 }
 
+//根据ID更新
+Service.findByIdAndUpdate = (id, update, options) => {
+  // return Test.findByIdAndUpdate(id, update, options, callback);
+  return new Promise((resolve, reject) => {
+
+    let ObjectId = mongoose.Types.ObjectId(id);
+    // var test = new Test(obj);
+    Test.findByIdAndUpdate(ObjectId, update, options, (err, res) => {
+      if (err) {
+        console.log("Error:" + err);
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    });
+    // Test.findByIdAndUpdate((err, res) => {
+    //   if (err) {
+    //     console.log("Error:" + err);
+    //     reject(err);
+    //   } else {
+    //     resolve(res);
+    //   }
+    // });
+  });
+}
+
 //查询指定数据
 Service.findList = (whereStr) => {
   return Test.find(whereStr);

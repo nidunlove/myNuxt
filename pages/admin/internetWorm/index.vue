@@ -14,6 +14,8 @@
 
       <el-table-column prop="_id" label="ID">
       </el-table-column>
+      <el-table-column prop="order" label="排序">
+      </el-table-column>
       <el-table-column prop="source_name" label="来源">
       </el-table-column>
       <el-table-column prop="source_url" label="来源地址">
@@ -23,6 +25,9 @@
       <el-table-column prop="title" label="标题">
       </el-table-column>
       <el-table-column prop="href" label="链接">
+        <template slot-scope="scope">
+          <a :href="scope.row.href" target="_blank">{{scope.row.href}}</a>
+        </template>
       </el-table-column>
       <el-table-column prop="desc" label="描述">
       </el-table-column>
@@ -33,7 +38,9 @@
 
       <el-table-column fixed="right" label="操作" width="100">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+          <!-- <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button> -->
+          <el-button @click="updateHomeDataAction($event,scope.row,1)" type="primary" icon="el-icon-top">置首</el-button>
+          <el-button @click="updateHomeDataAction($event,scope.row,null)" type="warning" icon="el-icon-bottom">恢复</el-button>
           <!-- <el-button type="text" size="small">编辑</el-button> -->
         </template>
       </el-table-column>
@@ -232,10 +239,53 @@
             this.loading = false;
             console.log(error);
             console.log("请求失败");
-            this.$message.error(error);
+            this.$message.error("请求失败");
           });
       },
+      //根据Id进行order排序
+      updateHomeDataAction(event,row,type) {
 
+        event.stopPropagation();
+
+        console.log(row);
+        let id = row._id;
+        if(!!id){
+          //置首页
+          this.updateHomeData(id,type);
+        } else {
+          this.$message.warning('ID未知');
+        }
+
+      },
+      //根据ID置首页
+      updateHomeData(id,order) {
+        this.loading = true;
+        this.$axios.post(this.$urlConfig.updateOrderById, {
+            id: id,
+            order: order,
+          })
+          .then(({
+            data
+          }) => {
+            console.log("数据请求成功");
+            console.log(data);
+            this.loading = false;
+            if (200 === data.code && data.data) {
+              // this.$message.success('删除成功，数据：' + data.data.deletedCount);
+              this.$message.success('更新order成功 order：'+order);
+              // this.tableData = data.data;
+              this.pageListData();
+            } else {
+              this.$message.warning(data.msg ? data.msg : '数据有误');
+            }
+          })
+          .catch((error) => {
+            this.loading = false;
+            console.log(error);
+            console.log("请求失败");
+            this.$message.error("请求失败");
+          });
+      },
       //分页
       pageListData() {
         this.loading = true;
@@ -260,7 +310,7 @@
             this.loading = false;
             console.log(error);
             console.log("请求失败");
-            this.$message.error(error);
+            this.$message.error("请求失败");
           });
       },
     }
