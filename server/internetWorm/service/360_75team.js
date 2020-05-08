@@ -8,7 +8,9 @@ var cheerio = require('cheerio');
 var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 
 // 定义网络爬虫的目标地址：奇舞团博客
-var url = 'https://75team.com/post/list';
+// var url = 'https://75team.com/post/list';
+var url = 'https://75.team/post/list';
+var detBaseUr = 'https://75.team';
 var source_name = "360奇舞团";
 
 //该模块入口
@@ -48,7 +50,7 @@ Service.action = () => {
 //解析HTML抓取最新文章
 function filterNews(html) {
 	var reData = [];
-	var ArticleBaseUrl = url;
+	var ArticleBaseUrl = detBaseUr;
   if (!!html) {
     // 沿用JQuery风格，定义$
     var $ = cheerio.load(html);

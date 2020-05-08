@@ -32,8 +32,10 @@ const urlConfig = {
   adminLogin:MY_BASEURL+'/admin/sys/login',
   adminLogout:MY_BASEURL+'/admin/sys/logout',
   //爬取页面
-  //taobao fed
+  //taobao fed-首页
   taobaofedWormStart: MY_BASEURL+'/admin/internetWorm/taobaofed_start',
+  //taobao fed-分类
+  taobaofedWormCate: MY_BASEURL+'/admin/internetWorm/taobaofed_cate',
   //360奇舞团
   i360_75team_start: MY_BASEURL+'/admin/internetWorm/i360_75team_start',
   //腾讯 alloyteam

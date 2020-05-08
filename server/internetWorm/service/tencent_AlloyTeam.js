@@ -48,7 +48,8 @@ Service.action = () => {
 //解析HTML抓取最新文章
 function filterNews(html) {
 	var reData = [];
-	var ArticleBaseUrl = url;
+  // var ArticleBaseUrl = url;
+  var ArticleBaseUrl = "";
   if (!!html) {
     // 沿用JQuery风格，定义$
     var $ = cheerio.load(html);

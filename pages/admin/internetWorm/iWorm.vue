@@ -6,7 +6,37 @@
 
    <el-button @click="addIWormAction()" type="warning" icon="el-icon-plus">插入到数据库</el-button>
    
-   <el-button @click="WormStartAction('taobaofedWormStart')" type="primary" icon="el-icon-aim">taobaofed</el-button>
+   <el-dropdown split-button type="primary" @click="WormStartAction('taobaofedWormStart')">
+      taobaofed
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item><el-button @click="WormStartCateAction('taobaofedWormCate',{type:'Web开发'})" type="primary" icon="el-icon-aim">【Web开发】</el-button></el-dropdown-item>
+        <el-dropdown-item><el-button @click="WormStartCateAction('taobaofedWormCate',{type:'Node.js'})" type="primary" icon="el-icon-aim">【Node.js】</el-button></el-dropdown-item>
+        <el-dropdown-item><el-button @click="WormStartCateAction('taobaofedWormCate',{type:'无线开发'})" type="primary" icon="el-icon-aim">【无线开发】</el-button></el-dropdown-item>
+      </el-dropdown-menu>
+  </el-dropdown>
+
+  <!-- <el-popover
+  placement="bottom-end"
+  width="400"
+  trigger="click">
+
+  <div>
+    <el-button @click="WormStartCateAction('taobaofedWormCate',{type:'Web开发'})" type="primary" icon="el-icon-aim">taobaofed【Web开发】</el-button>
+    <el-button @click="WormStartCateAction('taobaofedWormCate',{type:'Node.js'})" type="primary" icon="el-icon-aim">taobaofed【Node.js】</el-button>
+    <el-button @click="WormStartCateAction('taobaofedWormCate',{type:'无线开发'})" type="primary" icon="el-icon-aim">taobaofed【无线开发】</el-button>
+  </div> -->
+  
+  
+  <!-- <el-button slot="reference" @click="WormStartAction('taobaofedWormStart')" type="primary" icon="el-icon-aim">taobaofed【无线开发】</el-button> -->
+  <!-- <el-button slot="reference">click 激活</el-button> -->
+<!-- </el-popover> -->
+
+   <!-- <el-button @click="WormStartAction('taobaofedWormStart')" type="primary" icon="el-icon-aim">taobaofed</el-button>
+   <el-button @click="WormStartCateAction('taobaofedWormCate',{type:'Web开发'})" type="primary" icon="el-icon-aim">taobaofed【Web开发】</el-button>
+   <el-button @click="WormStartCateAction('taobaofedWormCate',{type:'Node.js'})" type="primary" icon="el-icon-aim">taobaofed【Node.js】</el-button>
+   <el-button @click="WormStartCateAction('taobaofedWormCate',{type:'无线开发'})" type="primary" icon="el-icon-aim">taobaofed【无线开发】</el-button> -->
+
+
    <el-button @click="WormStartAction('i360_75team_start')" type="primary" icon="el-icon-aim">360奇舞团</el-button>
 	 <el-button @click="WormStartAction('tencent_AlloyTeam_start')" type="primary" icon="el-icon-aim">腾讯alloyTeam</el-button>
    <el-button @click="WormStartAction('jd_aotu_start')" type="primary" icon="el-icon-aim">京东aotu</el-button>
@@ -179,7 +209,7 @@
       WormStartAction(type) {
         // this.taobaofedWormStart();
 
-        this.iWormStart(this.$urlConfig[type]);
+        this.iWormStart(this.$urlConfig[type],{});
 
         // if('taobaofedWormStart'===type){
         //   this.iWormStart(this.$urlConfig.taobaofedWormStart);
@@ -194,8 +224,27 @@
         // } else if('toutiao_blog_start'===type){
         //   this.iWormStart(this.$urlConfig.toutiao_blog_start);
         // }
+      },
 
+      //指定爬取
+      WormStartCateAction(type,parm) {
+        // this.taobaofedWormStart();
 
+        this.iWormStart(this.$urlConfig[type],parm);
+
+        // if('taobaofedWormStart'===type){
+        //   this.iWormStart(this.$urlConfig.taobaofedWormStart);
+        // } else if('i360_75team_start'===type){
+        //   this.iWormStart(this.$urlConfig.i360_75team_start);
+        // } else if('tencent_AlloyTeam_start'===type){
+        //   this.iWormStart(this.$urlConfig.tencent_AlloyTeam_start);
+        // } else if('jd_aotu_start'===type){
+        //   this.iWormStart(this.$urlConfig.jd_aotu_start);
+        // } else if('netEase_feg_start'===type){
+        //   this.iWormStart(this.$urlConfig.netEase_feg_start);
+        // } else if('toutiao_blog_start'===type){
+        //   this.iWormStart(this.$urlConfig.toutiao_blog_start);
+        // }
       },
 
       //爬取页面
@@ -228,11 +277,11 @@
 //       },
 
       //爬取页面
-      iWormStart(url) {
+      iWormStart(url,parm) {
         // this.tableData = [{'title':'11'},{'title':'22'},{'title':'33'},{'title':'44'},{'title':'55'}];
         // return;
         this.loading = true;
-        this.$axios.post(url, {})
+        this.$axios.post(url, parm)
           .then(({
             data
           }) => {
@@ -313,46 +362,5 @@
 </script>
 
 <style scoped lang="less">
-  // @import url(../assets/css/module/shareLink.less);
-
-  //   .el-header,
-  //   .el-footer {
-  //     background-color: #B3C0D1;
-  //     color: #333;
-  //     // text-align: center;
-  //     // line-height: 60px;
-  //   }
-  //
-  //   .el-aside {
-  //     background-color: #D3DCE6;
-  //     color: #333;
-  //
-  //     // text-align: center;
-  //     // line-height: 200px;
-  //   }
-  //
-  //   // .el-main {
-  //   //   background-color: #E9EEF3;
-  //   //   color: #333;
-  //   //   text-align: center;
-  //   //   line-height: 160px;
-  //   // }
-  //
-  //   // body>.el-container {
-  //   //   margin-bottom: 40px;
-  //   // }
-  //
-  //   //   .el-container:nth-child(5) .el-aside,
-  //   //   .el-container:nth-child(6) .el-aside {
-  //   //     line-height: 260px;
-  //   //   }
-  //   //
-  //   //   .el-container:nth-child(7) .el-aside {
-  //   //     line-height: 320px;
-  //   //   }
-  //
-  //   .el-menu-vertical-demo:not(.el-menu--collapse) {
-  //     width: 200px;
-  //     min-height: 400px;
-  //   }
+@import url(../../../assets/css/admin/common.less);
 </style>

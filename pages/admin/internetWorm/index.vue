@@ -2,7 +2,54 @@
   <div class="" v-loading="loading">
 
     <!-- <el-button @click="openBatchEdit()" type="warning" plain size="small" icon="el-icon-edit">删除</el-button> -->
-    <el-button @click="deleteByIdsAction()" type="danger" icon="el-icon-delete">删除</el-button>
+    <!-- <el-button @click="deleteByIdsAction()" type="danger" icon="el-icon-delete">删除</el-button> -->
+
+    <el-row justify="space-between">
+      <el-col :span="8"><el-button @click="deleteByIdsAction()" type="danger" icon="el-icon-delete">删除</el-button></el-col>
+      <el-col :span="16">
+        <div class="filterCon">
+          <el-row type="flex" justify="end">
+            <el-col :span="24">
+              <ul class="filterConList">
+                  <li>
+                    <span>排序状态:</span>
+                    <el-select filterable v-model="filterData.order" placeholder="排序状态" size="small" @change="initData()">
+                      <el-option
+                        v-for="item in selectOption.order"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                      </el-option>
+                    </el-select>
+                  </li>
+
+                  <li>
+                    <el-button type="primary" @click="initData()" size="small" icon="el-icon-search">搜索</el-button>
+                  </li>
+                </ul>
+            </el-col>
+          </el-row>
+
+        </div>
+
+
+        <!-- <ul>
+          <li>
+            <el-select v-model="value" placeholder="请选择">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+          </li>
+          <li>
+            <el-button @click="deleteByIdsAction()" type="danger" icon="el-icon-delete">删除</el-button>
+          </li>
+        </ul> -->
+      </el-col>
+    </el-row>
 
     <!-- <el-button @click="WormStartAction()" type="primary" icon="el-icon-aim">taobaofed爬取</el-button> -->
 
@@ -33,7 +80,7 @@
       </el-table-column>
       <el-table-column prop="author" label="author">
       </el-table-column>
-      
+
       <el-table-column prop="time" label="文章时间">
       </el-table-column>
       <el-table-column prop="creat_time" label="爬取时间">
@@ -81,6 +128,29 @@
           page_size: 10,
           total: 0
         },
+
+        //查询，排序方式
+        filterData: {
+          // "orderBy": "update_time desc,id_", //排序字段
+          // "sortAsc": "desc", //desc降序，asc升序
+          // "driverMobile":"",
+          // "driverName":"",
+          "auditState":"",
+        },
+
+        selectOption:{
+          order:[{
+            value: '',
+            label: '全部'
+          },  {
+            value: '1',
+            label: '置首'
+          }, {
+            value: null,
+            label: '其他'
+          }]
+        },
+
         loading: false,
         tableData: [],
 
@@ -139,6 +209,9 @@
       this.pageListData();
     },
     methods: {
+      initData(){
+        this.pageListData();
+      },
       // handleSelect(key, keyPath) {
       //   console.log(key, keyPath);
       // },
@@ -296,6 +369,9 @@
         this.$axios.post(this.$urlConfig.iWormPageList, {
             pageSize: this.pagination.page_size,
             currentPage: this.pagination.current_page,
+            filter:{
+              order:this.filterData.order
+            },
           })
           .then(({
             data
@@ -322,46 +398,5 @@
 </script>
 
 <style scoped lang="less">
-  // @import url(../assets/css/module/shareLink.less);
-
-  //   .el-header,
-  //   .el-footer {
-  //     background-color: #B3C0D1;
-  //     color: #333;
-  //     // text-align: center;
-  //     // line-height: 60px;
-  //   }
-  //
-  //   .el-aside {
-  //     background-color: #D3DCE6;
-  //     color: #333;
-  //
-  //     // text-align: center;
-  //     // line-height: 200px;
-  //   }
-  //
-  //   // .el-main {
-  //   //   background-color: #E9EEF3;
-  //   //   color: #333;
-  //   //   text-align: center;
-  //   //   line-height: 160px;
-  //   // }
-  //
-  //   // body>.el-container {
-  //   //   margin-bottom: 40px;
-  //   // }
-  //
-  //   //   .el-container:nth-child(5) .el-aside,
-  //   //   .el-container:nth-child(6) .el-aside {
-  //   //     line-height: 260px;
-  //   //   }
-  //   //
-  //   //   .el-container:nth-child(7) .el-aside {
-  //   //     line-height: 320px;
-  //   //   }
-  //
-  //   .el-menu-vertical-demo:not(.el-menu--collapse) {
-  //     width: 200px;
-  //     min-height: 400px;
-  //   }
+@import url(../../../assets/css/admin/common.less);
 </style>

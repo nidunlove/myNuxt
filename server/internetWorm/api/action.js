@@ -26,6 +26,15 @@ router.post('/taobaofed_start', function(req, res, next) {
     console.log(err);
   });
 });
+router.post('/taobaofed_cate', function(req, res, next) {
+  // console.log(req);
+  taobao_fed.action_cata(req.body).then(result => {
+    _msg.pass(res,'',result)
+  }).catch(err => {
+    _msg.fail(res,'500',500)
+    console.log(err);
+  });
+});
 /*360奇舞团，抓取*/
 router.post('/i360_75team_start', function(req, res, next) {
   i360_75team.action().then(result => {
