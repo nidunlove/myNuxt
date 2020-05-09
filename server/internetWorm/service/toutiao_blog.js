@@ -10,6 +10,7 @@ var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 // 定义网络爬虫的目标地址：淘宝fed主页
 var url = 'https://techblog.toutiao.com';
 var source_name = "字节跳动技术博客";
+var source_type = "zjtd";
 
 //该模块入口
 const Service = {};
@@ -65,8 +66,9 @@ function filterNews(html) {
         desc: newItem.find(".article-entry").text(),
         author: "",
         time: dateFilter.FilterDateTimeStr_Type1(newItem.find(".article-footer time").text()),
-        creat_time: new Date().getTime(),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });

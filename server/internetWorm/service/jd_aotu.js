@@ -10,6 +10,7 @@ var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 // 定义网络爬虫的目标地址：淘宝fed主页
 var url = 'https://aotu.io';
 var source_name = "京东凹凸实验室";
+var source_type = "jd";
 
 //该模块入口
 const Service = {};
@@ -65,8 +66,9 @@ function filterNews(html) {
         desc: newItem.find(".mod-post-info .mod-post-desc").text(),
         author: "",
         time: "",
-        creat_time: new Date().getTime(),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });

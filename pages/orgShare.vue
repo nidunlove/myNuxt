@@ -28,7 +28,7 @@ export default {
   // },
   data () {
     return {
-      title: '倪盾的个人主页',
+      title: '网址导航',
       resData:{}
     }
   },

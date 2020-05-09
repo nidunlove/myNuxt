@@ -54,6 +54,8 @@
 
       <el-table-column prop="source_name" label="来源">
       </el-table-column>
+      <el-table-column prop="source_type" label="来源类型">
+      </el-table-column>
       <el-table-column prop="source_url" label="来源地址">
       </el-table-column>
       <el-table-column prop="classify" label="分类">

@@ -11,9 +11,35 @@
           <el-row type="flex" justify="end">
             <el-col :span="24">
               <ul class="filterConList">
+
+                <!-- <li>
+                    <span>爬取时间:</span>
+                    <el-date-picker
+                      v-model="value2"
+                      type="datetimerange"
+                      :picker-options="pickerOptions"
+                      range-separator="至"
+                      start-placeholder="开始日期"
+                      end-placeholder="结束日期"
+                      align="right">
+                    </el-date-picker>
+                  </li> -->
+
+                <li>
+                    <span>来源:</span>
+                    <el-select filterable clearable v-model="filterData.source_type" placeholder="来源" size="small" @change="initData()">
+                      <el-option
+                        v-for="item in selectOption.source_type"
+                        :key="item.key"
+                        :label="item.value"
+                        :value="item.key">
+                      </el-option>
+                    </el-select>
+                  </li>
+
                   <li>
                     <span>排序状态:</span>
-                    <el-select filterable v-model="filterData.order" placeholder="排序状态" size="small" @change="initData()">
+                    <el-select filterable clearable v-model="filterData.order" placeholder="排序状态" size="small" @change="initData()">
                       <el-option
                         v-for="item in selectOption.order"
                         :key="item.value"
@@ -65,6 +91,8 @@
       </el-table-column>
       <el-table-column prop="source_name" label="来源">
       </el-table-column>
+      <el-table-column prop="source_type" label="来源类型">
+      </el-table-column>
       <el-table-column prop="source_url" label="来源地址">
       </el-table-column>
       <el-table-column prop="classify" label="分类">
@@ -83,7 +111,7 @@
 
       <el-table-column prop="time" label="文章时间">
       </el-table-column>
-      <el-table-column prop="creat_time" label="爬取时间">
+      <el-table-column prop="creat_time" label="爬取时间" :formatter="formatterDateTime">
       </el-table-column>
 
       <el-table-column fixed="right" label="操作" width="100">
@@ -136,9 +164,11 @@
           // "driverMobile":"",
           // "driverName":"",
           "auditState":"",
+          source_type:"",
         },
 
         selectOption:{
+          source_type:[],
           order:[{
             value: '',
             label: '全部'
@@ -207,10 +237,26 @@
       // this.getData('/api/home/list');
       // this.getData('/api');
       this.pageListData();
+
+      this.getSourceType();
     },
     methods: {
       initData(){
+        // this.current_page
         this.pageListData();
+      },
+      formatterDateTime(row, column, cellValue, index){
+        // return 
+        let date = new Date(cellValue);
+        // let s = timeStr;
+        // let sArr = s.split('-');
+        let y = date.getFullYear();
+        let M = date.getMonth()+1;
+        let d = date.getDate();
+        let h = date.getHours();
+        let m = date.getMinutes();
+        let s = date.getSeconds();
+        return y+'/'+M+'/'+d + ' ' +h+':'+m+':'+s;
       },
       // handleSelect(key, keyPath) {
       //   console.log(key, keyPath);
@@ -291,6 +337,33 @@
       //       this.$message.error(error);
       //     });
       // },
+      
+      //来源列表
+      getSourceType() {
+        // this.loading = true;
+        this.$axios.post(this.$urlConfig.common_source_type, {})
+          .then(({
+            data
+          }) => {
+            console.log("数据请求成功");
+            console.log(data);
+            // this.loading = false;
+            if (200 === data.code && data.data) {
+              this.selectOption.source_type = data.data;
+              // this.$message.success('删除成功，数据：' + data.data.deletedCount);
+              // this.tableData = data.data;
+              // this.pageListData();
+            } else {
+              this.$message.warning(data.msg ? data.msg : '数据有误');
+            }
+          })
+          .catch((error) => {
+            // this.loading = false;
+            // console.log(error);
+            // console.log("请求失败");
+            this.$message.error("请求失败");
+          });
+      },
 
       //根据ID删除
       deleteByIdsData(ids) {
@@ -366,12 +439,18 @@
       //分页
       pageListData() {
         this.loading = true;
+        var filter = {};
+        if(''!==this.filterData.order){
+          filter.order = this.filterData.order;
+        }
+        if(''!==this.filterData.source_type){
+          filter.source_type = this.filterData.source_type;
+        }
         this.$axios.post(this.$urlConfig.iWormPageList, {
             pageSize: this.pagination.page_size,
             currentPage: this.pagination.current_page,
-            filter:{
-              order:this.filterData.order
-            },
+            filter: filter,
+            sort: { creat_time:-1,time:-1 },
           })
           .then(({
             data

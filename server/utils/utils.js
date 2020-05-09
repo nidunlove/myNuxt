@@ -19,6 +19,8 @@ utils.ConvertJSONFileToData = function(jsonPath,callBack) {
         data: {},
         msg: '文件读取失败'
       };
+      console.log(err);
+      console.log(result);
       // res.send('文件读取失败');
       // res.status(500).json({code:500,msg:'文件读取失败'});
     } else {
@@ -47,6 +49,53 @@ utils.ConvertJSONFileToData = function(jsonPath,callBack) {
       }
     }
     callBack(result);
+  });
+}
+
+// promise readFileJSON
+utils.AsyncFileJSON = (jsonPath) => {
+  return new Promise((resolve, reject) => {
+
+    var file = path.join(__dirname, jsonPath); //文件路径，__dirname为当前运行js文件的目录
+
+    var result = {
+      code: 200,
+      data: {},
+      msg: '数据正常'
+    };
+    //读取json文件
+    fs.readFile(file, 'utf-8', (err, data)=> {
+      if (err) {
+        result = {
+          code: 500,
+          data: {},
+          msg: '文件读取失败'
+        };
+        reject(result);
+      } else {
+        result = {
+          code: 200,
+          data: {},
+          msg: '数据正常'
+        };
+        try {
+          result = {
+            code: 200,
+            data: JSON.parse(data),
+            msg: '数据正常'
+          };
+          resolve(result);
+        } catch (e) {
+          result = {
+            code: 200,
+            data: {},
+            msg: '数据解析异常'
+          };
+          console.log(e);
+          reject(result);
+        }
+      }
+    });
   });
 }
 

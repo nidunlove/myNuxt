@@ -7,11 +7,27 @@ var cheerio = require('cheerio');
 
 var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 
+var apiUtils = require('../../utils/utils.js'); //api 公用工具
+
 // 定义网络爬虫的目标地址：奇舞团博客
 // var url = 'https://75team.com/post/list';
 var url = 'https://75.team/post/list';
 var detBaseUr = 'https://75.team';
 var source_name = "360奇舞团";
+var source_type = "360";
+
+// let awite = apiUtils.AsyncFileJSON('../api/data/Color.json');
+
+// async () => {
+//   const source_data_list = await apiUtils.AsyncFileJSON('../../api/JSON/common.json');
+
+//   // console.log(data)
+//   // source_data
+//   var source_data = source_data_list.find(item=>item.key == source_type);
+//   console.log("source_data",source_data);
+//   source_name = source_data.value;
+//   // source_data_list.find(value=>value>4)
+// }
 
 //该模块入口
 const Service = {};
@@ -67,8 +83,9 @@ function filterNews(html) {
         desc: "",
         author: newItem.find(".meta .author").text(),
         time: dateFilter.FilterDateTimeStr_Type2(newItem.find(".meta .date").text()),
-        creat_time: new Date().getTime(),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });

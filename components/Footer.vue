@@ -7,8 +7,9 @@
       <div class="footer-item"><a href="http://www.miitbeian.gov.cn/" target="_blank">苏ICP备19008760号-1</a></div>
       <div class="footer-item">Powered by <a href="https://zh.nuxtjs.org/" target="_blank">Nuxt.Js</a></div>
     </div>
-
+    <el-backtop target=""></el-backtop>
   </footer>
+  
 </template>
 
 

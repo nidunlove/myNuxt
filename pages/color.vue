@@ -34,7 +34,7 @@ export default {
   // },
   data () {
     return {
-      title: '倪盾的个人主页',
+      title: '色彩',
       resData:{}
     }
   },

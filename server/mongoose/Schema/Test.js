@@ -19,6 +19,7 @@ var TestSchema = new Schema({
     time: { type: String },
     creat_time: { type: Date},
     source_name : {type: String},
+    source_type : {type: String},
     source_url : {type: String},
 	 order : { type: Number, min: -5, max: 100 },
 });

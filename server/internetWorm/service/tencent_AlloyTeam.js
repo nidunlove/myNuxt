@@ -10,6 +10,7 @@ var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 // 定义网络爬虫的目标地址：奇舞团博客
 var url = 'http://www.alloyteam.com/category/webdevelop/';
 var source_name = "腾讯AlloyTeam";
+var source_type = "tx";
 
 //该模块入口
 const Service = {};
@@ -70,8 +71,9 @@ function filterNews(html) {
         author: newItem.find(".title .blogPs a").eq(1).text(),
         // time: time,
         time: dateFilter.FilterDateTimeStr_Type3(time),
-        creat_time: new Date().getTime(),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });

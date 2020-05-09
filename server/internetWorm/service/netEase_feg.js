@@ -10,7 +10,7 @@ var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 // 定义网络爬虫的目标地址：淘宝fed主页
 var url = 'http://feg.netease.com';
 var source_name = "网易feg";
-
+var source_type = "wy";
 //该模块入口
 const Service = {};
 
@@ -65,8 +65,9 @@ function filterNews(html) {
         desc: "",
         author: newItem.find(".article_author .name").text(),
         time: dateFilter.FilterDateTimeStr_Type1(newItem.find(".article_author .data").text()),
-        creat_time: new Date().getTime(),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });

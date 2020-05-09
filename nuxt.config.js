@@ -88,6 +88,10 @@ module.exports = {
       src: '~plugins/utils',
       ssr: false ,//不在服务端运行
       // mode: 'client'
+    },
+    {
+      src: '~plugins/vue-infinite-scroll',  // vue-infinite-scroll名字和js文件名字对应就行
+      ssr: false // 只在client被打包引用
     }
   ],
 

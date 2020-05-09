@@ -10,6 +10,7 @@ var dateFilter = require('../../utils/dateFilter.js'); //api 公用工具
 // 定义网络爬虫的目标地址：淘宝fed主页
 var url = 'https://fed.taobao.org';
 var source_name = "淘宝fed";
+var source_type = "tb";
 
 let cateUrl = 'https://fed.taobao.org/blogs/categories/';
 
@@ -96,10 +97,11 @@ function filterNews(html) {
         title: newItem.find(".article-title h1").text(),
         href: ArticleBaseUrl+newItem.attr('href'),
         desc: newItem.find(".article-desc").text(),
-        author: newItem.find(".article-bottom span").text(),
-        time: "",
-        creat_time: new Date().getTime(),
+        author: newItem.find(".article-bottom span").eq(0).text(),
+        time: newItem.find(".article-bottom span").eq(1).text(),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });
@@ -128,10 +130,11 @@ function filterNewsCate(html,classify) {
         title: newItem.find(".article-card-inner h2").text(),
         href: ArticleBaseUrl+newItem.attr('href'),
         desc: newItem.find(".article-preview-content").text(),
-        author: newItem.find(".card-frontmatter").text(),
-        time: "",
-        creat_time: new Date().getTime(),
+        author: newItem.find(".card-frontmatter span").eq(0).text(),
+        time: dateFilter.FilterDateTimeStr_Type4(newItem.find(".card-frontmatter span").eq(1).text()),
+        creat_time: dateFilter.DateTimeNow(),
         source_name : source_name,
+        source_type: source_type,
         source_url : url,
       });
     });

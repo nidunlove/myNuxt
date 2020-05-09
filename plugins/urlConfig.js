@@ -31,6 +31,8 @@ const urlConfig = {
   //后台管理
   adminLogin:MY_BASEURL+'/admin/sys/login',
   adminLogout:MY_BASEURL+'/admin/sys/logout',
+  //来源类型
+  common_source_type: MY_BASEURL+'/admin/internetWorm/common_source_type',
   //爬取页面
   //taobao fed-首页
   taobaofedWormStart: MY_BASEURL+'/admin/internetWorm/taobaofed_start',

@@ -17,6 +17,17 @@ var toutiao_blog = require('../service/toutiao_blog.js');
 
 var TestService = require("../../mongoose/Service/Test.js");
 
+var apiUtils = require('../../utils/utils.js'); //api 公用工具
+
+//文章类型列表
+/* 请求 */
+router.post('/common_source_type', function(req, res) {
+  // console.log(11)
+  apiUtils.ConvertJSONFileToData('../internetWorm/JSON/common.json',function(result){
+    res.status(result.code).json(result.data);
+  });
+});
+
 /*淘宝fed，抓取*/
 router.post('/taobaofed_start', function(req, res, next) {
   taobao_fed.action().then(result => {

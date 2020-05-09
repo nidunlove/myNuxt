@@ -46,7 +46,7 @@ export default {
   // },
   data () {
     return {
-      title: '倪盾的个人主页',
+      title: '开放接口',
       resData:{},
       listData:[],
     }
