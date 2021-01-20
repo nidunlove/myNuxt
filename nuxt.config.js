@@ -143,6 +143,7 @@ module.exports = {
     prefix: '/baseUrl', // baseURL
     credentials: true,
   },
+  
   proxy: {
     '/baseUrl': {
       target: 'https://668ni.com', // 代理地址
