@@ -4,8 +4,8 @@
       <nav class="logo">
         <nuxt-link to="/" target="_blank">
           <i class="iconfont icon-gerenkongjian"></i>
-          <h1>一枚前端开发</h1>
-          <h2 style="font-size: 12px;color:#999;">倪盾的主页</h2>
+          <h1>一枚很懒的前端开发</h1>
+          <h2 style="font-size: 12px;color:#999;">倪盾的个人博客</h2>
         </nuxt-link>
       </nav>
       <!--  -->

@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
     // MY_BASEURL_proxy = "/baseUrl";
 } else {
     // build 线上和测试 run build
-    MY_BASEURL = "http://668ni.com";
+    MY_BASEURL = "";
 }
 
 

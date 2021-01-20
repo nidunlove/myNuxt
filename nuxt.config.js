@@ -2,17 +2,25 @@
 // import bodyParser from 'body-parser'
 // import session from 'express-session'
 
-const pkg = require('./package')
+// const pkg = require('./package')
 
+let remove_console = []
+
+if (process.env.NODE_ENV === 'production') {
+  remove_console.push("transform-remove-console")
+}
 
 module.exports = {
   mode: 'universal',
-
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
   /*
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: '一枚前端开发',
     meta: [{
         charset: 'utf-8'
       },
@@ -28,12 +36,12 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: '一枚前端开发,一堆网址导航,一些技术分享,一点知识学习,一个博客/主页'
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content: pkg.keywords
+        content: '前端导航,前端网址,前端开发,web前端,前端技术,IT前端,倪盾,个人主页,博客,前端,H5,网址,学习,分享'
       }
     ],
     script: [{
@@ -47,7 +55,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: 'http://at.alicdn.com/t/font_474878_d18dqvgjzoi.css'
+        href: 'https://at.alicdn.com/t/font_474878_d18dqvgjzoi.css'
       },
     ]
   },
@@ -101,7 +109,9 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots"
   ],
 
   /*
@@ -173,6 +183,9 @@ module.exports = {
      */
     extend(config, ctx) {
 
+    },
+    babel: {
+      'plugins': remove_console
     }
   }
 }
