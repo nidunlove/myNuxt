@@ -136,17 +136,18 @@ module.exports = {
   /*
    ** Axios module configuration
    */
-  axios: {
-    // baseURL: process.env.BASE_URL || 'http://127.0.0.1:3000'
-    // See https://github.com/nuxt-community/axios-module#options
-    // proxy: true,
-    // prefix: '/api', // baseURL
-    // credentials: true,
-  },
+  // axios: {
+  //   // baseURL: process.env.BASE_URL || 'http://127.0.0.1:3000'
+  //   // See https://github.com/nuxt-community/axios-module#options
+  //   proxy: true,
+  //   prefix: '/baseUrl', // baseURL
+  //   credentials: true,
+  // },
   // proxy: {
-  //   '/baseUrl/': {
-  //     target: 'http://127.0.0.1:3000', // 代理地址
-  //     changeOrigin: true,
+  //   '/baseUrl': {
+  //     target: 'https://668ni.com', // 代理地址
+  //     secure: true, // 如果是https接口，需要配置这个参数
+  //     // changeOrigin: true,
   //     pathRewrite: {
   //       '^/baseUrl': ''
   //     },
