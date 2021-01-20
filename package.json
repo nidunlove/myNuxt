@@ -27,7 +27,7 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mongodb": "^3.2.3",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "nuxt": "^2.0.0",
     "vue-infinite-scroll": "^2.0.2"
   },
